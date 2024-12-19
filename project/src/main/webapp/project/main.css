@@ -1,0 +1,251 @@
+@charset "UTF-8";
+
+#title {
+	font-family: "IBM Plex Sans KR";
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	color: black;
+	font-family: "Nanum Gothic", "IBM Plex Sans KR";
+	font-weight: 400;
+	font-style: normal;
+	font-size:20px;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+	display: flex;
+}
+
+body {
+	margin: 0 auto;
+}
+
+/* 헤더 */
+header {
+	/* width: 1400px; */
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 80px;
+}
+
+header * {
+	display: flex;
+	align-items: center;
+}
+
+header i {
+	margin: 20px;
+	font-size: 40px;
+}
+
+header ul a {
+	display: inline-block;
+	padding: 16px;
+	width: 200px;
+	text-align: center;
+}
+
+header ul li:hover {
+    background-color: rgb(240, 248, 255);
+}
+
+li.dropdown {
+	position: relative;
+}
+
+.dropdown_content {
+	display: none;
+	background-color: rgb(235, 245, 253);
+	position: absolute;
+	top: 50px;
+	flex-direction: column;
+	z-index: 3;
+	font-size: 20px;
+}
+
+.dropdown_content a {
+	display: block;
+	padding: 15px;
+}
+
+header a:hover {
+	background-color: rgb(218, 236, 251);
+} 
+
+.dropdown:hover .dropdown_content {
+	display: block;
+}
+
+.sign {
+	border: 2px solid rgb(208, 229, 255);
+	padding: 5px 10px;
+	border-radius: 5px;
+	margin-right: 10px;
+	font-size: 18px;
+	color: aliceblue;
+}
+
+.carousel {
+	background-color: antiquewhite;
+}
+
+/* main 영역 */
+main {
+	/* background-color: antiquewhite; */
+	width: 85%;
+    height: 850px;
+	MARGIN: 0 AUTO;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+}
+
+/* aside 영역 */
+.left {
+	border: 1px solid black;
+	width: 20%;
+	height: 100%;
+    padding: 0px 25px;
+}
+
+.left ul {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.left strong{
+    font-size: x-large;
+    margin: 10px;
+}
+
+.left li {
+	position: relative;
+    padding: 9px 30px;
+}
+
+/* section 영역 */
+section {
+	border: 1px solid black;
+	width: 75%;
+	height: 100%;
+	margin: 0 auto;
+	/* display: flex;
+	align-items: center; */
+}
+
+.center {
+	MARGIN: 0 AUTO;
+	WIDTH: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+}
+
+div .prod{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+div .prod img{
+    width: 200px;
+    height: 280px;
+}
+
+div .prod a{
+    margin: 30px;
+}
+
+/* 로그인, 회원가입 폼 */
+form {
+	width: 90%;
+	margin: 0 AUTO;
+	margin-top: 10px;
+}
+
+table {
+	margin: 0 auto;
+}
+
+#loginForm input, #loginForm select {
+	background-color: aliceblue;
+	height: 50px;
+	width: 400px;
+	border: 0px;
+	border-radius: 5px;
+	padding: 10px 5px;
+	margin: 10px 5px;
+	font-size: 20px;
+}
+#registerForm input, #registerForm select {
+	background-color: aliceblue;
+	height: 50px;
+	/* width: 400px; */
+	border: 0px;
+	border-radius: 5px;
+	padding: 10px 5px;
+	margin: 10px 5px;
+	font-size: 20px;
+}
+
+#button1 {
+	background-color: rgb(147, 249, 215);
+	border-radius: 5px;
+	border: 0px;
+	width: 100px;
+	height: 35px;
+	font-weight: bold;
+}
+
+label {
+	margin-right: 10px;
+}
+
+/* #writeForm table {
+	FONT-SIZE: 20px;
+	COLOR: black;
+	LINE-HEIGHT: 160%;
+}
+
+#writeForm TEXTAREA {
+	BORDER-RIGHT: 1px solid #999999;
+	BORDER-TOP: 1px solid #999999;
+	FONT-SIZE: 13pt;
+	BORDER-LEFT: 1px solid #999999;
+	COLOR: BLACK;
+	BORDER-BOTTOM: 1px solid #999999;
+	BACKGROUND-COLOR: white
+} */
+#writeForm INPUT {
+	width: 90%;
+}
+
+/* 게시판 
+.section_top, .section_select {
+	display: flex;
+	align-items:center;
+	justify-content: space-between;
+} */
+
+/* 푸터영역 */
+footer {
+	background-color: darkgray;
+	height: 200px;
+}

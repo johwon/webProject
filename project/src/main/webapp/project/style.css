@@ -1,0 +1,97 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+    display: flex;
+}
+
+/* 헤더 */
+header{
+    /* width: 1400px; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: snow;
+}
+header *{
+    display: flex;
+    align-items: center;
+}
+header i{
+    margin: 20px;
+    font-size: 40px;
+}
+header ul a{
+    display: inline-block;
+    padding: 16px;
+    width: 100px;
+    font-size: 25px;
+    text-align: center;
+}
+header ul li:hover{
+    background-color: aliceblue;
+}
+li.dropdown{
+    position: relative;
+}
+.dropdown_content{
+    display: none;
+    background-color: lightgoldenrodyellow;
+    position: absolute;
+    top: 60px;
+    flex-direction: column;
+    z-index: 1;
+    font-size: 20px;
+}
+.dropdown_content a{
+    display: block;
+    padding: 10px;
+}
+.dropdown_content a:hover{
+    background-color: rgb(218, 236, 251);
+}
+.dropdown:hover .dropdown_content{
+    display: block;
+}
+
+
+
+form{
+    background-color: rgb(230, 230, 250);
+    width: 800px;
+    padding: 20px;
+    margin: 20px;
+    font-size: 15px;
+    border-radius: 20px;
+}
+form input,select{
+    background-color: aliceblue;
+    height: 30px;
+    border: 0px;
+    border-radius: 10px;
+    margin: 5px 0px;
+}
+
+form button{
+    background-color: rgb(147, 249, 215);
+    border-radius: 5px;
+    border: 0px;
+    width: 100px;
+    height: 35px;
+    font-weight: bold;
+}
+
+
+/* footer */
+footer{
+    text-align: center;
+    height: 100px;
+    background-color: lavenderblush;
+}
