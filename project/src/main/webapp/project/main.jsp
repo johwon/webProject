@@ -96,13 +96,15 @@
 			<div class="new_prod">
 				<h1>NEW!</h1>
 				<div class="prod">
-					<a href="#"> <img src="">
+					<a href="prodDetailPage.jsp" id="10001"> <img src="">
 						<p>상품이름1</p>
 						<p>가격</p>
-					</a> <a href="#"> <img src="">
+					</a> 
+					<a href="detailPage.jsp" id="10001" > <img src="">
 						<p>상품이름2</p>
 						<p>가격</p>
-					</a> <a href="#"> <img src="">
+					</a> 
+					<a href="detailPage.jsp" id="10001" > <img src="">
 						<p>상품이름3</p>
 						<p>가격</p>
 					</a>

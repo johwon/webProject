@@ -76,7 +76,7 @@ try {
 							onclick="document.location.href='boardDeleteForm.jsp?num=<%=_num%>&pageNum=<%=pageNum%>'">
 							&nbsp;&nbsp;&nbsp;&nbsp; <!-- 수정<1> --> <input type="button"
 							value="글목록"
-							onclick="document.location.href='list.jsp?pageNum=<%=pageNum%>'">
+							onclick="document.location.href='boardList.jsp?pageNum=<%=pageNum%>'">
 
 						</td>
 					</tr>

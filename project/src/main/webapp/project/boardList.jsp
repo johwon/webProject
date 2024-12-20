@@ -82,7 +82,6 @@ number = count - (currentPage - 1) * pageSize;
 						<th align="center" width="100">작성자</th>
 						<th align="center" width="150">작성일</th>
 						<th align="center" width="50">조 회</th>
-						<th align="center" width="100">IP</th>
 					</tr>
 					<%
 					for (BoardVO article : boardList) {
@@ -111,7 +110,6 @@ number = count - (currentPage - 1) * pageSize;
 							href="mailto:<%=article.getEmail()%>"> <%=article.getWriter()%></a></td>
 						<td align="center" width="150"><%=sdf.format(article.getRegdate())%></td>
 						<td align="center" width="50"><%=article.getReadcount()%></td>
-						<td align="center" width="100"><%=article.getIp()%></td>
 					</tr>
 					<%
 					}

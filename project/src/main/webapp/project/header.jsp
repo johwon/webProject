@@ -19,13 +19,11 @@
 			%>
 			<a href="loginPage.jsp" class="sign"><li>로그인</li></a> <a
 				href="registerPage.jsp" class="sign"><li>회원가입</li></a>
-			<!-- <a href="#"><i class="fa-solid fa-phone"></i></a>
-            <a href="#"><i class="fa-regular fa-comments"></i></a> -->
 			<%
 			} else {
 			%>
-			<a href="loginPage.jsp" class="sign"><li>마이페이지</li></a> <a href=#><i
-				class="fa-solid fa-basket-shopping"></i></a>
+			<a href="loginPage.jsp" class="sign"><li>마이페이지</li></a> 
+			<a href=basketPage.jsp><i class="fa-solid fa-basket-shopping"></i></a>
 			<%
 			}
 			%>
