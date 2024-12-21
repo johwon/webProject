@@ -38,8 +38,8 @@
 							</tr>
 						</table>
 					</fieldset>
-					<input type="submit" value="로그인" size="300px"> <a
-						href='registerPage.jsp'><input type='button' value='회원가입'></a>
+					<input type="submit" value="로그인" size="300px"> <br>
+					<a href='registerPage.jsp'><input type='button' value='회원가입'></a>
 				</form>
 				<%
 				} else {

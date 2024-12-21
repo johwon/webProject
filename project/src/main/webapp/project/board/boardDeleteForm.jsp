@@ -1,5 +1,4 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-<%@ include file="view/color.jsp"%>
 <%
 request.setCharacterEncoding("utf-8");
 int num = Integer.parseInt(request.getParameter("num"));
@@ -24,7 +23,7 @@ String pageNum = request.getParameter("pageNum");
 <script src="script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
 </head>
 <body>
-	<%@ include file="./header.jsp"%>
+	<%@ include file="../header.jsp"%>
 	<main>
 		<section align="center">
 			<div class="center">
@@ -36,7 +35,7 @@ String pageNum = request.getParameter("pageNum");
 					<table border="1" align="center" cellspacing="0" cellpadding="0"
 						width="360">
 						<tr height="30">
-							<td align=center bgcolor="<%=value_c%>"><b>비밀번호를 입력해
+							<td align=center><b>비밀번호를 입력해
 									주세요.</b></td>
 						</tr>
 						<tr height="30">
@@ -45,7 +44,7 @@ String pageNum = request.getParameter("pageNum");
 							</td>
 						</tr>
 						<tr height="30">
-							<td align=center bgcolor="<%=value_c%>"><input type="submit"
+							<td align=center><input type="submit"
 								value="글삭제"> <input type="button" value="글목록"
 								onclick="document.location.href= 'boardList.jsp?pageNum=<%=pageNum%>'">
 							</td>
@@ -56,4 +55,4 @@ String pageNum = request.getParameter("pageNum");
 		</section>
 		<aside class="right"></aside>
 	</main>
-	<%@ include file="./bottom.jsp"%>
+	<%@ include file="../bottom.jsp"%>

@@ -1,5 +1,4 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-<%@ include file="view/color.jsp"%>
 <%
 //새로운 글로 입력(num=0, ref=0, step=0, depth=0)
 //부모글에 대한 답변으로 입력(num=부모값, ref=부모값, step=부모값, depth=부모값)
@@ -31,7 +30,7 @@ try {
 <script src="script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
 </head>
 <body>
-	<%@ include file="./header.jsp"%>
+	<%@ include file="../header.jsp"%>
 	<main>
 		<section align="center">
 			<div class="center">
@@ -97,4 +96,4 @@ try {
 		</section>
 		<aside class="right"></aside>
 	</main>
-	<%@ include file="./bottom.jsp"%>
+	<%@ include file="../bottom.jsp"%>

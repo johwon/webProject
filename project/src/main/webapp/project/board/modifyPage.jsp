@@ -32,7 +32,7 @@ cvo = cdao.selectOneDB(cvo);
 <script src="script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
 </head>
 <body>
-<%@ include file="./header.jsp"%>
+<%@ include file="../header.jsp"%>
 <main>
 	<aside class="left"></aside>
 	<section align="center">
@@ -98,6 +98,6 @@ cvo = cdao.selectOneDB(cvo);
 	</section>
 	<aside class="right"></aside>
 </main>
-<%@ include file="./bottom.jsp"%>
+<%@ include file="../bottom.jsp"%>
 </body>
 </html>

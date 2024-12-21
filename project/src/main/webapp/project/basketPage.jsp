@@ -51,7 +51,6 @@ table, th, td{
 				<table id="basket_table">
 					<tr>
 						<th></th>
-						<th>주문번호</th>
 						<th>상품번호</th>
 						<th>상품이름</th>
 						<th>사이즈</th>
@@ -64,7 +63,6 @@ table, th, td{
 					<tr>
 						<td><input type="checkbox" name="deleteProd"
 							value="<%=data.getNum()%>"></td>
-						<td><%=data.getNum()%></td>
 						<td><%=data.getpNum()%></td>
 						<td><%=data.getpName()%></td>
 						<td><%=data.getSize()%></td>

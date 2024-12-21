@@ -25,8 +25,8 @@
 				<div class="dropdown_content">
 					<a href="#">1.menu</a> <a href="#">2.menu</a> <a href="#">3.menu</a>
 				</div></li>
-			<li><a href="boardList.jsp">공지사항</a></li>
-			<li><a href="#">문의게시판</a></li>
+			<li><a href="#">공지사항</a></li>
+			<li><a href="boardList.jsp">문의게시판</a></li>
 			<li><a href="#">REVIEW</a></li>
 		</ul>
 		<div class="header_icon">

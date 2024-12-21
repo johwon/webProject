@@ -55,7 +55,6 @@ header ul a {
 
 header ul li:hover {
     color: rgb(240, 248, 255);
-	/* background-color: aliceblue; */
 }
 
 li.dropdown {
@@ -221,7 +220,7 @@ div .detail_bottom img{
 }
 
 /* 로그인, 회원가입 폼 */
-#loginform form, #registerForm form {
+#loginForm form, #registerForm form {
 	width: 90%;
 	margin: 0 AUTO;
 	margin-top: 10px;
@@ -232,7 +231,7 @@ table {
 	margin: 0 auto;
 }
 
-#loginform input, select {
+#loginForm input {
 	background-color: aliceblue;
 	height: 50px;
 	width: 400px;
@@ -243,7 +242,7 @@ table {
 	font-size: 20px;
 }
 
-#registerForm input, select {
+#registerForm input, #registerForm select {
 	background-color: aliceblue;
 	height: 50px;
 	width: 400px;

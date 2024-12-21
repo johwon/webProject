@@ -1,7 +1,6 @@
 <%@page import="co.kh.edu.board.model.BoardVO"%>
 <%@page import="co.kh.edu.board.model.BoardDAO"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
-<%@ include file="./view/color.jsp"%>
 <%
 request.setCharacterEncoding("utf-8");
 int num = Integer.parseInt(request.getParameter("num"));
@@ -33,7 +32,7 @@ try {
 <script src="script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
 </head>
 <body>
-<%@ include file="./header.jsp"%>
+<%@ include file="../header.jsp"%>
 <main>
 	<section align="center">
 		<div class="center">
@@ -88,4 +87,4 @@ try {
 	} catch (Exception e) {
 	}
 	%>
-<%@ include file="./bottom.jsp"%>
+<%@ include file="../bottom.jsp"%>

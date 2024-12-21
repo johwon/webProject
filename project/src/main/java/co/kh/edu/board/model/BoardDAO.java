@@ -41,6 +41,10 @@ public class BoardDAO {
 	private final String INSERT_SQL = "insert into board2(num, writer, email, subject, pass, regdate, ref, step, depth, content, ip) values(board_seq.nextval,?,?,?,?,?,?,?,?,?,?)";
 	private final String UPDATE_STEP_SQL = "update board2 set step=step+1 where ref= ? and step > ?";
 	private final String UPDATE_READCOUNT_SQL = "update board2 set readcount=readcount+1 where num = ?";
+	private final String SEARCH_SUBJECT_SQL = "SELECT * FROM BOARD2 WHERE SUBJECT LIKE ?";
+	private final String SEARCH_SUBJECT_COUNT_SQL = "SELECT COUNT(*) AS COUNT FROM BOARD2 WHERE SUBJECT LIKE ?";
+	private final String SEARCH_WRITER_SQL = "SELECT * FROM BOARD2 WHERE WRITER LIKE ?";
+	private final String SEARCH_WRITER_COUNT_SQL = "SELECT COUNT(*) AS COUNT FROM BOARD2 WHERE WRITER LIKE ?";
 
 	public Boolean insertDB(BoardVO vo) {
 		ConnectionPool cp = ConnectionPool.getInstance();
@@ -341,5 +345,118 @@ public class BoardDAO {
 		}
 		return (count != 0) ? (true) : (false);
 	}
+
+	public ArrayList<BoardVO> searchSubjectDB(BoardVO vo) {
+		ConnectionPool cp = ConnectionPool.getInstance();
+		Connection con = cp.dbCon();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		ArrayList<BoardVO> boardList = new ArrayList<BoardVO>();
+		try {
+			pstmt = con.prepareStatement(SEARCH_SUBJECT_SQL);
+			pstmt.setString(1, vo.getSubject());
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				int num = rs.getInt("num");
+				String writer = rs.getString("writer");
+				String email = rs.getString("email");
+				String subject = rs.getString("subject");
+				String pass = rs.getString("pass");
+				Timestamp regdate = rs.getTimestamp("regdate");
+				int readcount = rs.getInt("readcount");
+				int ref = rs.getInt("ref");
+				int step = rs.getInt("step");
+				int depth = rs.getInt("depth");
+				String content = rs.getString("content");
+				String ip = rs.getString("ip");
+				BoardVO bvo = new BoardVO(num, writer, email, subject, pass, readcount, ref, step, depth, regdate,
+						content, ip);
+				boardList.add(bvo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			cp.dbClose(con, pstmt, rs);
+		}
+		return boardList;
+	}
+	
+	public int searchSubjectCountDB(BoardVO vo) {
+		ConnectionPool cp = ConnectionPool.getInstance();
+		Connection con = cp.dbCon();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int count = 0;
+		try {
+			pstmt = con.prepareStatement(SEARCH_SUBJECT_COUNT_SQL);
+			pstmt.setString(1,vo.getSubject());
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				count = rs.getInt("count");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			cp.dbClose(con, pstmt, rs);
+		}
+		return count;
+	}
+
+	public ArrayList<BoardVO> searchWriterDB(BoardVO vo) {
+		ConnectionPool cp = ConnectionPool.getInstance();
+		Connection con = cp.dbCon();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		ArrayList<BoardVO> boardList = new ArrayList<BoardVO>();
+		try {
+			pstmt = con.prepareStatement(SEARCH_WRITER_SQL);
+			pstmt.setString(1, vo.getWriter());
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				int num = rs.getInt("num");
+				String writer = rs.getString("writer");
+				String email = rs.getString("email");
+				String subject = rs.getString("subject");
+				String pass = rs.getString("pass");
+				Timestamp regdate = rs.getTimestamp("regdate");
+				int readcount = rs.getInt("readcount");
+				int ref = rs.getInt("ref");
+				int step = rs.getInt("step");
+				int depth = rs.getInt("depth");
+				String content = rs.getString("content");
+				String ip = rs.getString("ip");
+				BoardVO bvo = new BoardVO(num, writer, email, subject, pass, readcount, ref, step, depth, regdate,
+						content, ip);
+				boardList.add(bvo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			cp.dbClose(con, pstmt, rs);
+		}
+		return boardList;
+	}
+	
+	public int searchWriterCountDB(BoardVO vo) {
+		ConnectionPool cp = ConnectionPool.getInstance();
+		Connection con = cp.dbCon();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int count = 0;
+		try {
+			pstmt = con.prepareStatement(SEARCH_WRITER_COUNT_SQL);
+			pstmt.setString(1,vo.getWriter());
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				count = rs.getInt("count");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			cp.dbClose(con, pstmt, rs);
+		}
+		return count;
+	}
+	
 
 }
