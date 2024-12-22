@@ -37,14 +37,12 @@ public class NoticeBoardDAO {
 	private final String SELECT_ONE_SQL = "select * from NOTICE where num = ?";
 	private final String SELECT_PASS_ID_CHECK_SQL = "select count(*) count from NOTICE where num = ? and pass = ?";
 	private final String DELETE_SQL = "DELETE FROM NOTICE WHERE NUM = ? AND PASS = ?";
-	private final String UPDATE_SQL = "update NOTICE set writer=?,email=?,subject=?,content=? where num=?";
-	private final String INSERT_SQL = "insert into NOTICE(num, writer, email, subject, pass, regdate, ref, step, depth, content, ip) values(board_seq.nextval,?,?,?,?,?,?,?,?,?,?)";
+	private final String UPDATE_SQL = "update NOTICE set subject=?,content=? where num=?";
+	private final String INSERT_SQL = "insert into NOTICE(num, writer, email, subject, pass, regdate, content, ip) values(notice_seq.nextval,?,?,?,?,?,?,?)";
 	private final String UPDATE_STEP_SQL = "update NOTICE set step=step+1 where ref= ? and step > ?";
 	private final String UPDATE_READCOUNT_SQL = "update NOTICE set readcount=readcount+1 where num = ?";
 	private final String SEARCH_SUBJECT_SQL = "SELECT * FROM NOTICE WHERE SUBJECT LIKE ?";
 	private final String SEARCH_SUBJECT_COUNT_SQL = "SELECT COUNT(*) AS COUNT FROM NOTICE WHERE SUBJECT LIKE ?";
-	private final String SEARCH_WRITER_SQL = "SELECT * FROM NOTICE WHERE WRITER LIKE ?";
-	private final String SEARCH_WRITER_COUNT_SQL = "SELECT COUNT(*) AS COUNT FROM NOTICE WHERE WRITER LIKE ?";
 
 	public Boolean insertDB(NoticeBoardVO vo) {
 		ConnectionPool cp = ConnectionPool.getInstance();
@@ -71,38 +69,16 @@ public class NoticeBoardDAO {
 			e.printStackTrace();
 		}
 
-		// getNum() = 0이면 새글, 0이 아니면 답변글이다
-		try {
-			if (vo.getNum() != 0) {// 답변글일경우
-				pstmt = con.prepareStatement(UPDATE_STEP_SQL);
-				pstmt.setInt(1, vo.getRef());
-				pstmt.setInt(2, vo.getStep());
-				pstmt.executeUpdate();
-				ref = vo.getRef();
-				step = vo.getStep() + 1;
-				depth = vo.getDepth() + 1;
-			} else {// 새 글일 경우
-				ref = number; // 가장 최고값+1
-				step = 0;
-				depth = 0;
-			} // 쿼리를 작성
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-
 		// 게시판글 등록하기
 		try {
 			pstmt = con.prepareStatement(INSERT_SQL);
-			pstmt.setString(1, vo.getWriter());
-			pstmt.setString(2, vo.getEmail());
+			pstmt.setString(1, "관리자");
+			pstmt.setString(2, "admin@gmail.com");
 			pstmt.setString(3, vo.getSubject());
 			pstmt.setString(4, vo.getPass());
 			pstmt.setTimestamp(5, vo.getRegdate());
-			pstmt.setInt(6, ref);
-			pstmt.setInt(7, step);
-			pstmt.setInt(8, depth);
-			pstmt.setString(9, vo.getContent());
-			pstmt.setString(10, vo.getIp());
+			pstmt.setString(6, vo.getContent());
+			pstmt.setString(7, vo.getIp());
 			count = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -175,7 +151,6 @@ public class NoticeBoardDAO {
 		int count = 0;
 		try {
 			// 조회수 증가
-
 			pstmt = con.prepareStatement(UPDATE_READCOUNT_SQL);
 			pstmt.setInt(1, vo.getNum());
 			pstmt.executeUpdate();
@@ -199,6 +174,7 @@ public class NoticeBoardDAO {
 				String ip = rs.getString("ip");
 				bvo = new NoticeBoardVO(num, writer, email, subject, pass, readcount, ref, step, depth, regdate,
 						content, ip);
+				System.out.println(bvo.toString());
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -233,6 +209,7 @@ public class NoticeBoardDAO {
 				int depth = rs.getInt("depth");
 				String content = rs.getString("content");
 				String ip = rs.getString("ip");
+				int rate = rs.getInt("rate");
 				bvo = new NoticeBoardVO(num, writer, email, subject, pass, readcount, ref, step, depth, regdate,
 						content, ip);
 			}
@@ -307,11 +284,9 @@ public class NoticeBoardDAO {
 		if (passCheckCount != 0) {
 			try {
 				pstmt = con.prepareStatement(UPDATE_SQL);
-				pstmt.setString(1, vo.getWriter());
-				pstmt.setString(2, vo.getEmail());
-				pstmt.setString(3, vo.getSubject());
-				pstmt.setString(4, vo.getContent());
-				pstmt.setInt(5, vo.getNum());
+				pstmt.setString(1, vo.getSubject());
+				pstmt.setString(2, vo.getContent());
+				pstmt.setInt(3, vo.getNum());
 				count = pstmt.executeUpdate();
 				if (count == 0)
 					returnValue = 3;
@@ -390,62 +365,6 @@ public class NoticeBoardDAO {
 		try {
 			pstmt = con.prepareStatement(SEARCH_SUBJECT_COUNT_SQL);
 			pstmt.setString(1, vo.getSubject());
-			rs = pstmt.executeQuery();
-			if (rs.next()) {
-				count = rs.getInt("count");
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			cp.dbClose(con, pstmt, rs);
-		}
-		return count;
-	}
-
-	public ArrayList<NoticeBoardVO> searchWriterDB(NoticeBoardVO vo) {
-		ConnectionPool cp = ConnectionPool.getInstance();
-		Connection con = cp.dbCon();
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		ArrayList<NoticeBoardVO> boardList = new ArrayList<NoticeBoardVO>();
-		try {
-			pstmt = con.prepareStatement(SEARCH_WRITER_SQL);
-			pstmt.setString(1, vo.getWriter());
-			rs = pstmt.executeQuery();
-			while (rs.next()) {
-				int num = rs.getInt("num");
-				String writer = rs.getString("writer");
-				String email = rs.getString("email");
-				String subject = rs.getString("subject");
-				String pass = rs.getString("pass");
-				Timestamp regdate = rs.getTimestamp("regdate");
-				int readcount = rs.getInt("readcount");
-				int ref = rs.getInt("ref");
-				int step = rs.getInt("step");
-				int depth = rs.getInt("depth");
-				String content = rs.getString("content");
-				String ip = rs.getString("ip");
-				NoticeBoardVO bvo = new NoticeBoardVO(num, writer, email, subject, pass, readcount, ref, step, depth,
-						regdate, content, ip);
-				boardList.add(bvo);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			cp.dbClose(con, pstmt, rs);
-		}
-		return boardList;
-	}
-
-	public int searchWriterCountDB(NoticeBoardVO vo) {
-		ConnectionPool cp = ConnectionPool.getInstance();
-		Connection con = cp.dbCon();
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		int count = 0;
-		try {
-			pstmt = con.prepareStatement(SEARCH_WRITER_COUNT_SQL);
-			pstmt.setString(1, vo.getWriter());
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				count = rs.getInt("count");

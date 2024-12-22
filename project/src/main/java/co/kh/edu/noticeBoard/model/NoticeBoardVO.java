@@ -136,8 +136,9 @@ public class NoticeBoardVO {
 
 	@Override
 	public String toString() {
-		return "Board2VO [num=" + num + ", writer=" + writer + ", email=" + email + ", subject=" + subject + ", pass="
-				+ pass + ", readcount=" + readcount + ", ref=" + ref + ", step=" + step + ", depth=" + depth
-				+ ", content=" + content + ", ip=" + ip + "]";
+		return "NoticeBoardVO [num=" + num + ", writer=" + writer + ", email=" + email + ", subject=" + subject
+				+ ", pass=" + pass + ", readcount=" + readcount + ", ref=" + ref + ", step=" + step + ", depth=" + depth
+				+ ", regdate=" + regdate + ", content=" + content + ", ip=" + ip + "]";
 	}
+
 }
