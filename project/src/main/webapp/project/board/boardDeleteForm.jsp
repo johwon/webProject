@@ -12,7 +12,7 @@ String pageNum = request.getParameter("pageNum");
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>웹페이지</title>
-<link rel="stylesheet" href="./main.css?after" type="text/css">
+<link rel="stylesheet" href="../main.css?after" type="text/css">
 <link rel="stylesheet" href="./carousel.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

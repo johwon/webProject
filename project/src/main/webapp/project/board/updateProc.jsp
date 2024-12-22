@@ -14,7 +14,7 @@ int check = bdao.updateDB(vo);
 // 1: 성공, 2. 패스워드문제, 3 수정문제
 if (check == 1) {
 %>
-<meta http-equiv="Refresh" content="0;url=list.jsp?pageNum=<%=pageNum%>">
+<meta http-equiv="Refresh" content="0;url=boardList.jsp?pageNum=<%=pageNum%>">
 <%
 } else if(check==2){
 %>

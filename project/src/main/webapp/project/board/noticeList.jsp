@@ -54,7 +54,7 @@
 			<div class="center">
 				<b>공지사항(전체 글:<%=count%>)</b>
 				<div align="right">
-					<form action="boardSearchProc.jsp">
+					<form action="noticeSearchProc.jsp">
 						<select name="searchOpt">
 							<option value="subject">제목</option>
 						</select> 
@@ -64,7 +64,7 @@
 				</div>
 				<table width="1000">
 					<tr>
-						<td align="right"><a href="writeForm.jsp">글쓰기</a></td>
+						<td align="right"><a href="noticeWriteForm.jsp">글쓰기</a></td>
 					</tr>
 				</table>
 				<%
@@ -93,9 +93,61 @@
 					%>
 					<tr height="30">
 						<td align="center" width="50"><%=number--%></td>
+						<!-- 제목 -->
 						<td align="left" width="250">
+							<a href="noticeContent.jsp?num=<%=article.getNum()%>&pageNum=1">
+ 							<%=article.getSubject()%></a> 
+						</td>
+						<td align="center" width="100">
+							<a href="mailto:<%=article.getEmail()%>"> <%=article.getWriter()%></a>
+						</td>
+						<td align="center" width="150"><%=sdf.format(article.getRegdate())%></td>
+						<td align="center" width="50"><%=article.getReadcount()%></td>
+					</tr>
+					<%
+					}//end of for
+					%>
+				</table>
+				<br> <br>
+				<div align="center">
+					<%
+					if(count>0){
+						int pageBlock = 3; //??
+						int imsi = count%pageSize == 0 ? 0 : 1;
+						int pageCount = count / pageSize + imsi;
+						int startPage = (int)((currentPage-1) / pageBlock ) * pageBlock + 1;
+						int endPage = startPage + pageBlock - 1;
+						if(endPage > pageCount){
+							endPage = pageCount;
+						}
+						if(startPage > pageBlock){
+						%>
+						<a href="noticeList.jsp?pageNum=<%=startPage - pageBlock%>">[이전]</a>
+						<%
+						}
+						for(int i = startPage; i <= endPage; i++ ){
+							if(currentPage == i) {
+							%>
+							<a href="noticeList.jsp?pageNum=<%=i%>"><b>[<%=i%>]</b> </a>
+							<%
+							} else{
+							%>
+							<a href="noticeList.jsp?pageNum=<%=i%>">[<%=i%>]</a>
+							<%
+							}
+						}//end of for
+						if( endPage < pageCount){
+							%>
+							<a href="noticeList.jsp?pageNum=<%=startPage + pageBlock%>">[다음]</a>
+						<%
+						}
+					}
+				}
+						%>
+				</div>
 			</div>
 		</section>
 	</main>
+	<%@ include file="../bottom.jsp"%>
 </body>
 </html>

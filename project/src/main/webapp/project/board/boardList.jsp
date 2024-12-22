@@ -97,6 +97,7 @@ number = count - (currentPage - 1) * pageSize;
 					%>
 					<tr height="30">
 						<td align="center" width="50"><%=number--%></td>
+						<!-- 제목 -->
 						<td align="left" width="250">
 							<a href="content.jsp?num=<%=article.getNum()%>&pageNum=1">
 								<%
@@ -104,10 +105,10 @@ number = count - (currentPage - 1) * pageSize;
 								//depth : 1 => 길이:5, 2=>10
 								int wid = 0;
 								if (article.getDepth() > 0) {
-									wid = 8 * article.getDepth();
+									wid = 13 * article.getDepth();
 %> 
-									<img src="images/level.gif" width="<%=wid%>" height="16">
-								   <img src="images/re.gif"> 
+									<img src="../media/level.gif" width="<%=wid%>" height="16">
+								   <img src="../media/re.gif"> 
 <%
  								}
 %> 							
@@ -115,7 +116,7 @@ number = count - (currentPage - 1) * pageSize;
 <%
  								if (article.getReadcount() >= 20) {
 %> 
- 									<img src="images/hot.gif" border="0" height="16"> 
+ 									<img src="../media/hot.gif" border="0" height="16"> 
 <%
 								}
 %>
@@ -134,7 +135,6 @@ number = count - (currentPage - 1) * pageSize;
 					%>
 				</table>
 				<br> <br>
-				<!-- 수정 <7> -->
 				<div align="center">
 					<%
 					if (count > 0) {
@@ -148,24 +148,18 @@ number = count - (currentPage - 1) * pageSize;
 						if (startPage > pageBlock) {
 					%>
 					<a href="boardList.jsp?pageNum=<%=startPage - pageBlock%>">[이전]</a>
-
 					<%
 					}
 					for (int i = startPage; i <= endPage; i++) {
-					if (currentPage == i) {
-					%>
-					<a href="boardList.jsp?pageNum=<%=i%>"><b>[<%=i%>]
-					</b> </a>
-					<%
-					} else {
-					%>
-					<a href="boardList.jsp?pageNum=<%=i%>">[<%=i%>]
-					</a>
-					<%
-					}
-					%>
-
-					<%
+						if (currentPage == i) {
+						%>
+						<a href="boardList.jsp?pageNum=<%=i%>"><b>[<%=i%>]</b> </a>
+						<%
+						} else {
+						%>
+						<a href="boardList.jsp?pageNum=<%=i%>">[<%=i%>]</a>
+						<%
+						}
 					}
 					if (endPage < pageCount) {
 					%>
@@ -177,6 +171,7 @@ number = count - (currentPage - 1) * pageSize;
 				</div>
 			</div>
 		</section>
-		<aside class="right"></aside>
 	</main>
 	<%@ include file="../bottom.jsp"%>
+	</body>
+</html>

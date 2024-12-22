@@ -27,8 +27,7 @@ try {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>웹페이지</title>
-<link rel="stylesheet" href="./main.css?after" type="text/css">
-<link rel="stylesheet" href="./carousel.css" />
+<link rel="stylesheet" href="../main.css?after" type="text/css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
@@ -46,7 +45,7 @@ try {
 			<form style="background-color: white">
 				<table width="800" border="1" cellspacing="0" cellpadding="0" align="center">
 					<tr height="30">
-						<td align="center" width="125">">글번호</td>
+						<td align="center" width="125">글번호</td>
 						<td align="center" width="125" align="center"><%=bvo.getNum()%></td>
 						<td align="center" width="125">조회수</td>
 						<td align="center" width="125" align="center"><%=bvo.getReadcount()%></td>
@@ -66,15 +65,20 @@ try {
 						<td align="left" width="375" colspan="3"><pre><%=bvo.getContent()%></pre></td>
 					</tr>
 					<tr height="30">
-						<td colspan="4" align="right"><input
-							type="button" value="글수정"
+						<td colspan="4" align="right">
+							<input type="button" value="글수정"
 							onclick="document.location.href='updateForm.jsp?num=<%=_num%>&pageNum=<%=pageNum%>'">
+							&nbsp;&nbsp;&nbsp;&nbsp; 
+							
 							<input type="button" value="답글쓰기" 
-						onclick="document.location.href='writeForm.jsp?num=<%=num%>&ref=<%=ref%>&step=<%=step%>&depth=<%=depth%>'">
-							&nbsp;&nbsp;&nbsp;&nbsp; <input type="button" value="글삭제"
+							onclick="document.location.href='writeForm.jsp?num=<%=num%>&ref=<%=ref%>&step=<%=step%>&depth=<%=depth%>'">
+							&nbsp;&nbsp;&nbsp;&nbsp; 
+							
+							<input type="button" value="글삭제"
 							onclick="document.location.href='boardDeleteForm.jsp?num=<%=_num%>&pageNum=<%=pageNum%>'">
-							&nbsp;&nbsp;&nbsp;&nbsp; <!-- 수정<1> --> <input type="button"
-							value="글목록"
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							
+							<input type="button" value="글목록"
 							onclick="document.location.href='boardList.jsp?pageNum=<%=pageNum%>'">
 
 						</td>

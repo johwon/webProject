@@ -54,7 +54,7 @@ number = count - (currentPage - 1) * pageSize;
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>웹페이지</title>
-<link rel="stylesheet" href="./main.css?after" type="text/css">
+<link rel="stylesheet" href="../main.css?after" type="text/css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
@@ -70,12 +70,14 @@ number = count - (currentPage - 1) * pageSize;
 			<div class="center">
 					<b>글목록(전체 글:<%=count%>)</b>
 				<div align="right">
-					<select name="searchOpt">
-					 <option value="title">제목</option>
-					 <option value="author">작성자</option>
-					</select>
-					<input type="text" name="search">
-					<a href=#><i class="fa-solid fa-magnifying-glass"></i></a>
+					<form action="reviewSearchProc.jsp">
+						<select name="searchOpt">
+							<option value="subject">제목</option>
+							<option value="writer">작성자</option>
+						</select> 
+						<input type="text" name="search"> 
+						<input type="submit" value="검색">
+					</form>
 				</div>
 				<table width="1000">
 					<tr>

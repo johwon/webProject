@@ -21,8 +21,7 @@ try {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>웹페이지</title>
-<link rel="stylesheet" href="./main.css?after" type="text/css">
-<link rel="stylesheet" href="./carousel.css" />
+<link rel="stylesheet" href="../main.css?after" type="text/css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
@@ -37,8 +36,7 @@ try {
 	<section align="center">
 		<div class="center">
 		<b>글수정</b> <br>
-		<form method="post" name="writeform" 
-			action="updateProc.jsp?pageNum=<%=pageNum%>"
+		<form method="post" name="writeform" action="updateProc.jsp?pageNum=<%=pageNum%>"
 			onsubmit="return writeSave()" style="background-color: white">
 			<input type="hidden" name="num" value="<%=article.getNum()%>">
 			<table width="600px" border="1" cellspacing="0" cellpadding="0"
@@ -63,7 +61,7 @@ try {
 					<td width="200px" align="center">내 용</td>
 					<td align="left" width="500px"><textarea name="content"
 							rows="20" cols="60">
- <%=article.getContent()%></textarea></td>
+ 					<%=article.getContent()%></textarea></td>
 				</tr>
 				<tr>
 					<td width="200px" align="center">비밀번호</td>
@@ -74,7 +72,7 @@ try {
 					<td colspan=2 align="center">
 						<input type="submit" value="글수정"> 
 						<input type="reset"	value="다시작성"> 
-						<input type="button" value="목록보기" onclick="document.location.href='list.jsp?pageNum=<%=pageNum%>'">
+						<input type="button" value="목록보기" onclick="document.location.href='boarList.jsp?pageNum=<%=pageNum%>'">
 					</td>
 				</tr>
 			</table>
