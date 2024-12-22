@@ -1,5 +1,19 @@
+<%@page import="co.kh.edu.reviewBoard.model.ReviewBoardVO"%>
+<%@page import="co.kh.edu.reviewBoard.model.ReviewBoardDAO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="co.kh.edu.noticeBoard.model.NoticeBoardVO"%>
+<%@page import="co.kh.edu.noticeBoard.model.NoticeBoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+NoticeBoardDAO dao = NoticeBoardDAO.getInstance();
+NoticeBoardVO vo = new NoticeBoardVO();
+ArrayList<NoticeBoardVO> list = dao.selectDB();
+
+ReviewBoardDAO rdao = ReviewBoardDAO.getInstance();
+ReviewBoardVO rvo = new ReviewBoardVO();
+ArrayList<ReviewBoardVO> rlist = rdao.selectDB();
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +21,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>웹페이지</title>
 <link rel="stylesheet" href="./main.css?after" type="text/css">
-<link rel="stylesheet" href="./carousel.css" />
 <style>
 @import
 	url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Kablammo&family=Nanum+Gothic&family=Oxanium:wght@200..800&display=swap')
@@ -18,30 +31,36 @@
 </head>
 <body>
 	<header>
-		<a href="main.jsp"><i class="fa-solid fa-shirt"></i>
-			<h2 id="title">SHOP</h2></a>
+		<a href="<%=request.getContextPath()%>/project/main.jsp"><i
+			class="fa-solid fa-shirt"></i>
+			<h2>SHOP</h2></a>
 		<ul>
 			<li class="dropdown"><a href="#">BEST</a>
 				<div class="dropdown_content">
 					<a href="#">1.menu</a> <a href="#">2.menu</a> <a href="#">3.menu</a>
 				</div></li>
-			<li><a href="#">공지사항</a></li>
-			<li><a href="boardList.jsp">문의게시판</a></li>
-			<li><a href="#">REVIEW</a></li>
+			<li><a
+				href="<%=request.getContextPath()%>/project/board/noticeList.jsp">공지사항</a></li>
+			<li><a
+				href="<%=request.getContextPath()%>/project/board/boardList.jsp">문의게시판</a></li>
+			<li><a
+				href="<%=request.getContextPath()%>/project/board/reviewList.jsp">REVIEW</a></li>
 		</ul>
 		<div class="header_icon">
 			<%
 			String sessionId = (String) session.getAttribute("id");
 			if (sessionId == null) {
 			%>
-			<a href="loginPage.jsp" class="sign"><li>로그인</li></a> <a
-				href="registerPage.jsp" class="sign"><li>회원가입</li></a>
-			<!-- <a href="#"><i class="fa-solid fa-phone"></i></a>
-            <a href="#"><i class="fa-regular fa-comments"></i></a> -->
+			<a href="<%=request.getContextPath()%>/project/loginPage.jsp"
+				class="sign"><li>로그인</li></a> <a
+				href="<%=request.getContextPath()%>/project/registerPage.jsp"
+				class="sign"><li>회원가입</li></a>
 			<%
 			} else {
 			%>
-			<a href="loginPage.jsp" class="sign"><li>마이페이지</li></a> <a href=#><i
+			<a href="<%=request.getContextPath()%>/project/loginPage.jsp"
+				class="sign"><li>마이페이지</li></a> <a
+				href="<%=request.getContextPath()%>/project/basketPage.jsp"><i
 				class="fa-solid fa-basket-shopping"></i></a>
 			<%
 			}
@@ -89,50 +108,96 @@
 					<li><a href="#">기타</a></li>
 				</div>
 			</ul>
-			<br> <input type="text" placeholder="찾고있는 상품이 있나요?"> <a><i
-				class="fa-solid fa-magnifying-glass"></i></a>
+			<br>
+			<form action="searchProdProc.jsp">
+				<input type="text" name="name" placeholder="찾고있는 상품이 있나요?" required>
+				<button type="submit">
+					<i class="fa-solid fa-magnifying-glass" onClick="submit"></i>
+				</button>
+			</form>
 		</aside>
 		<section>
 			<div class="new_prod">
-				<h1>NEW!</h1>
+				<br>
+				<h1 align="center">NEW!</h1>
 				<div class="prod">
-					<a href="prodDetailPage.jsp" id="10001"> <img src="">
-						<p>상품이름1</p>
-						<p>가격</p>
-					</a> 
-					<a href="detailPage.jsp" id="10001" > <img src="">
-						<p>상품이름2</p>
-						<p>가격</p>
-					</a> 
-					<a href="detailPage.jsp" id="10001" > <img src="">
-						<p>상품이름3</p>
-						<p>가격</p>
-					</a>
+					<a href="prodDetailPage.jsp?pNum=10001" id="10001"> <img
+						src="./media/prod10001.jpg">
+						<h4>T-SHIRT</h4>
+						<p>25,000원</p>
+					</a> <a href="prodDetailPage.jsp?pNum=10002" id="10002"> <img
+						src="./media/prod10002.jpg">
+						<h4>정장 셋업</h4>
+						<p>80,000원</p> 
+					 </a> 
+					 <!-- <a href="prodDetailPage.jsp?pNum=10003" id="10003"> <img
+						src="./media/prod10003.jpg">
+						<h4>자켓</h4>
+						<p>60,000원</p>
+					</a> -->
 				</div>
 				<br>
-				<div class="prod">
-					<a href="#"> <img src="">
-						<p>상품이름1</p>
-						<p>가격</p>
-					</a> <a href="#"> <img src="">
-						<p>상품이름2</p>
-						<p>가격</p>
-					</a> <a href="#"> <img src="">
-						<p>상품이름3</p>
-						<p>가격</p>
-					</a>
-				</div>
 			</div>
-			<div class="notice">
-				<a><h2>
-						<공지사항>
-					</h2></a> <br> <a><p>최신공지내용~~~~</p></a>
-				<p>작성일</p>
-				<a><p>최신공지내용~~~~</p></a>
-				<p>작성일</p>
+			<div class="mainBoard">
+				<div class="notice">
+					<a href="<%=request.getContextPath()%>/project/board/noticeList.jsp"><h2>
+							<공지사항></h2></a> 
+							<br>
+					<%
+					for (NoticeBoardVO data : list) {
+					%>
+					<a
+						href="<%=request.getContextPath()%>/project/board/noticeContent.jsp?num=<%=data.getNum()%>&pageNum=1">
+						<p><%=data.getSubject()%></p>
+						<p><%=data.getRegdate()%></p>
+					</a> <br>
+					<%
+					}
+					%>
+				</div>
+				<div class="review">
+					<a
+						href="<%=request.getContextPath()%>/project/board/reviewList.jsp"><h2>BEST
+							REVIEW</h2></a> <br>
+					<%
+					for (ReviewBoardVO data : rlist) {
+						if (data.getDepth() == 0) {
+					%>
+					<a
+						href="<%=request.getContextPath()%>/project/board/reviewContent.jsp?num=<%=data.getNum()%>&pageNum=1">
+						<p><%=data.getSubject()%></p>
+						<p><%=data.getRegdate()%></p>
+					</a> <br>
+					<%
+					}
+					}
+					%>
+				</div>
 			</div>
 		</section>
 	</main>
-	<footer></footer>
+	<footer>
+		<div class="center" align="center">
+			<ul>
+				<a href=#><li>회사소개</li></a>
+				<a href=#><li>매장안내</li></a>
+				<a href=#><li>이용안내</li></a>
+				<a href=#><li>개인정보처리방침</li></a>
+				<a href=#><li>이용약관</li></a>
+			</ul>
+			<br>
+			<div>
+				<p>상호 : (주)shop / 대표 : 조해원 / 주소 : 서울특별시 강남구 역삼동 호산빌딩</p>
+				<p>반품주소 : 서울특별시 강남구 역삼동 호산빌딩</p>
+				<p>사업자등록번호 : 000-00-00000 [사업자정보확인] / 통신판매업신고번호 : 제
+					0000-서울-0000호</p>
+			</div>
+			<br>
+			<p>고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한 구매안전서비스를 이용할 수 있습니다.</p>
+			<br>
+			<p>ⓒ (주)shop. All Rights reserved. design by cho.</p>
+
+		</div>
+	</footer>
 </body>
 </html>

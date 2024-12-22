@@ -64,7 +64,7 @@ table, th, td{
 						<td><input type="checkbox" name="deleteProd"
 							value="<%=data.getNum()%>"></td>
 						<td><%=data.getpNum()%></td>
-						<td><%=data.getpName()%></td>
+						<td><a href="prodDetailPage.jsp?pNum=<%=data.getpNum()%>"><%=data.getpName()%></a></td>
 						<td><%=data.getSize()%></td>
 						<td><%=data.getColor()%></td>
 						<td><%=data.getPrice()%></td>
@@ -74,8 +74,8 @@ table, th, td{
 					}
 					%>
 				</table>
-				<input type="submit" value="선택한 상품 삭제하기"> <input
-					type="button" value="선택한 상품 주문하기">
+				<input type="submit" value="선택한 상품 삭제하기"> 
+				<input type="button" value="선택한 상품 주문하기">
 			</form>
 		</section>
 	</main>
