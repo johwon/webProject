@@ -408,6 +408,7 @@ public class BoardDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		ArrayList<BoardVO> boardList = new ArrayList<BoardVO>();
+		System.out.println(vo.getWriter());
 		try {
 			pstmt = con.prepareStatement(SEARCH_WRITER_SQL);
 			pstmt.setString(1, vo.getWriter());

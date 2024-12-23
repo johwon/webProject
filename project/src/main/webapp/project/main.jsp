@@ -31,37 +31,31 @@ ArrayList<ReviewBoardVO> rlist = rdao.selectDB();
 </head>
 <body>
 	<header>
-		<a href="<%=request.getContextPath()%>/project/main.jsp"><i
-			class="fa-solid fa-shirt"></i>
+		<a href="<%=request.getContextPath()%>/project/main.jsp"><i class="fa-solid fa-shirt"></i>
 			<h2>SHOP</h2></a>
 		<ul>
 			<li class="dropdown"><a href="#">BEST</a>
 				<div class="dropdown_content">
-					<a href="#">1.menu</a> <a href="#">2.menu</a> <a href="#">3.menu</a>
+					<a href="<%=request.getContextPath()%>/project/prodPage.jsp">TOP</a> 
+					<a href="<%=request.getContextPath()%>/project/prodPage.jsp">BOTTOM</a> 
+					<a href="<%=request.getContextPath()%>/project/prodPage.jsp">ACC</a>
 				</div></li>
-			<li><a
-				href="<%=request.getContextPath()%>/project/board/noticeList.jsp">공지사항</a></li>
-			<li><a
-				href="<%=request.getContextPath()%>/project/board/boardList.jsp">문의게시판</a></li>
-			<li><a
-				href="<%=request.getContextPath()%>/project/board/reviewList.jsp">REVIEW</a></li>
+			<li><a href="<%=request.getContextPath()%>/project/board/noticeList.jsp">공지사항</a></li>
+			<li><a href="<%=request.getContextPath()%>/project/board/boardList.jsp">문의게시판</a></li>
+			<li><a href="<%=request.getContextPath()%>/project/board/reviewList.jsp">REVIEW</a></li>
 		</ul>
 		<div class="header_icon">
 			<%
 			String sessionId = (String) session.getAttribute("id");
 			if (sessionId == null) {
 			%>
-			<a href="<%=request.getContextPath()%>/project/loginPage.jsp"
-				class="sign"><li>로그인</li></a> <a
-				href="<%=request.getContextPath()%>/project/registerPage.jsp"
-				class="sign"><li>회원가입</li></a>
+			<a href="<%=request.getContextPath()%>/project/loginPage.jsp" class="sign"><li>로그인</li></a> <a
+				href="<%=request.getContextPath()%>/project/registerPage.jsp" class="sign"><li>회원가입</li></a>
 			<%
 			} else {
 			%>
-			<a href="<%=request.getContextPath()%>/project/loginPage.jsp"
-				class="sign"><li>마이페이지</li></a> <a
-				href="<%=request.getContextPath()%>/project/basketPage.jsp"><i
-				class="fa-solid fa-basket-shopping"></i></a>
+			<a href="<%=request.getContextPath()%>/project/loginPage.jsp" class="sign"><li>마이페이지</li></a> 
+			<a href="<%=request.getContextPath()%>/project/basketPage.jsp"><i class="fa-solid fa-basket-shopping"></i></a>
 			<%
 			}
 			%>
@@ -78,9 +72,10 @@ ArrayList<ReviewBoardVO> rlist = rdao.selectDB();
 			<hr>
 			<br>
 			<ul class="nav1">
-				<a href="#"><strong>TOP</strong></a>
+				<a href="<%=request.getContextPath()%>/project/prodPage.jsp"><strong>TOP</strong></a>
 				<div class="ul_body">
-					<li><a href="#">아우터</a></li>
+					<li><a
+						href="<%=request.getContextPath()%>/project/prodPage.jsp">아우터</a></li>
 					<li><a href="#">가디건,니트</a></li>
 					<li><a href="#">후드/맨투맨</a></li>
 					<li><a href="#">티셔츠</a></li>
@@ -123,33 +118,29 @@ ArrayList<ReviewBoardVO> rlist = rdao.selectDB();
 				<div class="prod">
 					<a href="prodDetailPage.jsp?pNum=10001" id="10001"> <img
 						src="./media/prod10001.jpg">
-						<h4>T-SHIRT</h4>
+						<h2>T-SHIRT</h2>
 						<p>25,000원</p>
 					</a> <a href="prodDetailPage.jsp?pNum=10002" id="10002"> <img
 						src="./media/prod10002.jpg">
-						<h4>정장 셋업</h4>
-						<p>80,000원</p> 
-					 </a> 
-					 <!-- <a href="prodDetailPage.jsp?pNum=10003" id="10003"> <img
-						src="./media/prod10003.jpg">
-						<h4>자켓</h4>
-						<p>60,000원</p>
-					</a> -->
+						<h2>정장 셋업</h2>
+						<p>80,000원</p>
+					</a>
 				</div>
 				<br>
 			</div>
+			<hr>
 			<div class="mainBoard">
 				<div class="notice">
-					<a href="<%=request.getContextPath()%>/project/board/noticeList.jsp"><h2>
-							<공지사항></h2></a> 
-							<br>
+					<a href="<%=request.getContextPath()%>/project/board/noticeList.jsp">
+					<h2 align="center"><공지사항></h2>
+					</a> <br>
 					<%
 					for (NoticeBoardVO data : list) {
 					%>
 					<a
 						href="<%=request.getContextPath()%>/project/board/noticeContent.jsp?num=<%=data.getNum()%>&pageNum=1">
-						<p><%=data.getSubject()%></p>
-						<p><%=data.getRegdate()%></p>
+						<p style="color: grey;"><%=data.getSubject()%></p>
+						<p style="color: grey;"><%=data.getRegdate()%></p>
 					</a> <br>
 					<%
 					}
@@ -157,7 +148,7 @@ ArrayList<ReviewBoardVO> rlist = rdao.selectDB();
 				</div>
 				<div class="review">
 					<a
-						href="<%=request.getContextPath()%>/project/board/reviewList.jsp"><h2>BEST
+						href="<%=request.getContextPath()%>/project/board/reviewList.jsp"><h2 align="center">BEST
 							REVIEW</h2></a> <br>
 					<%
 					for (ReviewBoardVO data : rlist) {
@@ -165,8 +156,8 @@ ArrayList<ReviewBoardVO> rlist = rdao.selectDB();
 					%>
 					<a
 						href="<%=request.getContextPath()%>/project/board/reviewContent.jsp?num=<%=data.getNum()%>&pageNum=1">
-						<p><%=data.getSubject()%></p>
-						<p><%=data.getRegdate()%></p>
+						<p style="color: grey;"><%=data.getSubject()%></p>
+						<p style="color: grey;"><%=data.getRegdate()%></p>
 					</a> <br>
 					<%
 					}

@@ -37,25 +37,25 @@ try {
 	<%@ include file="../header.jsp"%>
 	<main>
 		<section align="center">
-			<div class="center">
-				<b>글쓰기</b>
+			<div style="margin-top:50px;">
+				<h2>글 작성</h2><br>
 				<form method="post" name="writeForm" id="writeForm"
 					action="noticeWriteProc.jsp" onsubmit="return writeSave()"
-					style="background-color: white">
+					class="content">
 					<input type="hidden" name="num" value="<%=num%>"> 
-					<table width="800" border="1" cellpadding="0" cellspacing="0" align="center">
-							<td align="right" colspan="2""><a href="noticeList.jsp">글목록</a></td>
+					<table width="800" border="0" cellpadding="0" cellspacing="0" align="center">
+							<th align="right" colspan="2""><a href="noticeList.jsp">글목록</a></th>
 						</tr>
 						<tr>
-							<td width="150" align="center">이름</td>
+							<th width="150" align="center">이름</th>
 							<td width="330">관리자</td>
 						</tr>
 						<tr>
-							<td width="150" align="center">이메일</td>
+							<th width="150" align="center">이메일</th>
 							<td width="330">admin@gmail.com</td>
 						</tr>
 						<tr>
-							<td width="150" align="center">제목</td>
+							<th width="150" align="center">제목</th>
 							<td width="330">
 							<%
 								if (request.getParameter("num") == null) {
@@ -66,20 +66,20 @@ try {
 							</td>
 						</tr>
 						<tr>
-							<td width="100" align="center">내용</td>
+							<th width="100" align="center">내용</th>
 							<td width="330"><textarea name="content" rows="13" cols="50"></textarea>
 							</td>
 						</tr>
 						<tr>
-							<td width="100" align="center">비밀번호</td>
+							<th width="100" align="center">비밀번호</th>
 							<td width="330"><input type="password" size="10"
 								maxlength="10" name="pass" /></td>
 						</tr>
 						<tr>
 							<td colspan="2" align="center">
-								<input type="submit" value="글쓰기" /> 
-								<input type="reset" value="다시작성" /> 
-								<input type="button" value="목록"
+								<input type="submit" value="글쓰기" class="my_input"/> 
+								<input type="reset" value="다시작성" class="my_input"/> 
+								<input type="button" value="목록" class="my_input"
 								onClick="window.location='noticeList.jsp'">
 							</td>
 						</tr>
@@ -91,6 +91,5 @@ try {
 				%>
 			</div>
 		</section>
-		<aside class="right"></aside>
 	</main>
 	<%@ include file="../bottom.jsp"%>

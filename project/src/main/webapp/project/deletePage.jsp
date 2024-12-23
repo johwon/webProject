@@ -29,26 +29,30 @@
 	<%@ include file="./header.jsp"%>
 	<main>
 		<section>
+			<div class="center">
 			<form name="myForm" method="post" action="deleteDB.jsp"
 				onsubmit="return checkPass()">
-				<table width="280" border="1" align="center">
+				<table align="center" class="deletePage">
 					<tr>
-						<td colspan="2" align="center"><b>회원 탈퇴</b></td>
+						<th colspan="2" align="center"><b>회원 탈퇴</b></th>
 					</tr>
 					<tr>
-						<td width="170"><b>비밀번호입력</b></td>
-						<td width="110"><input type="password" name="pwd" size="15"></td>
+						<td ><b>비밀번호 입력</b></td>
+						<td ><input type="password" name="pwd" size="15"></td>
 					</tr>
 					<tr>
-						<td colspan="2" align="center"><input type="submit"
-							value="회원탈퇴"> <input type="button" value="취  소"
-							onclick="javascript:window.location='loginPage.jsp'"></td>
+						<td colspan="2" align="center">
+							<input type="submit" value="회원탈퇴"> 
+							<input type="button" value="취  소"
+								onclick="javascript:window.location='loginPage.jsp'">
+						</td>
 					</tr>
 				</table>
 			</form>
+			</div>
 		</section>
 		<aside class="right"></aside>
 	</main>
-	<footer></footer>
+	<%@ include file="./bottom.jsp"%>
 </body>
 </html>

@@ -15,9 +15,9 @@
     <div id="all">
       <div id="slide_show">
         <a href="#"><img src="./media/carousel1.jpg" alt="" class="slide" id="p1" /></a>
-        <a href="#"><img src="./media/carousel2.jpg" alt="" class="slide" id="p2" /></a>
-        <a href="#"><img src="./media/carousel3.jpg" alt="" class="slide" id="p3" /></a>
-        <a href="#"><img src="./media/slide-4.jpg" alt="" class="slide" id="p4" /></a>
+        <a href="#"><img src="./media/carousel7.jpg" alt="" class="slide" id="p2" /></a>
+        <a href="#"><img src="./media/carousel6.jpg" alt="" class="slide" id="p3" /></a>
+        <a href="#"><img src="./media/carousel4.jpg" alt="" class="slide" id="p4" /></a>
       </div>
       <i class="fa-solid fa-circle-chevron-left" id="navgateleft"></i>
       <i class="fa-solid fa-circle-chevron-right" id="navgateright"></i>

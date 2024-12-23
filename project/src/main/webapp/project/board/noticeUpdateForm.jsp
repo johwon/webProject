@@ -34,12 +34,12 @@ try {
 <%@ include file="../header.jsp"%>
 <main>
 	<section align="center">
-		<div class="center">
-		<b>글수정</b> <br>
+		<div style="margin-top:50px;">
+		<h2>글수정</h2> <br>
 		<form method="post" name="writeform" action="noticeUpdateProc.jsp?pageNum=<%=pageNum%>"
 		onsubmit="return writeSave()" style="background-color: white">
 			<input type="hidden" name="num" value="<%=article.getNum()%>">
-			<table width="600px" border="1" cellspacing="0" cellpadding="0" align="center" >
+			<table width="600px" border="0" cellspacing="0" cellpadding="0" align="center" class="content">
 				<tr>
 					<td width="200px" align="center">이 름</td>
 					<td align="left" width="500px"><%=article.getWriter()%></td>
@@ -68,9 +68,9 @@ try {
 				</tr>
 				<tr>
 					<td colspan=2 align="center">
-						<input type="submit" value="글수정"> 
-						<input type="reset"	value="다시작성"> 
-						<input type="button" value="목록보기" onclick="document.location.href='noticeList.jsp?pageNum=<%=pageNum%>'">
+						<input type="submit" value="글수정" class="my_input"> 
+						<input type="reset"	value="다시작성" class="my_input"> 
+						<input type="button" value="목록보기" class="my_input" onclick="document.location.href='noticeList.jsp?pageNum=<%=pageNum%>'">
 					</td>
 				</tr>
 			</table>

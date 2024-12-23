@@ -26,8 +26,8 @@ div#all {
 }
 
 div#slide_show {
-  width: 1300px;
-  height: 500px;
+  width: 1200px;
+  height: 600px;
   overflow: hidden;
   display: flex;  /* Flexbox는 자식 요소들(슬라이드 이미지)을 수평으로 배치합니다 */
   flex-wrap: nowrap;
@@ -36,8 +36,8 @@ div#slide_show {
 
 .carousel img {
   position: absolute;  /* 절대 위치로 배치 */
-  width: 1300px;
-  height: 500px;  /* 슬라이드 이미지의 높이 설정 */
+  width: 1200px;
+  height: 600px;  /* 슬라이드 이미지의 높이 설정 */
   border-radius: 20px;
   transition: transform 1s ease;  /* 애니메이션을 위한 트랜지션 */
 }

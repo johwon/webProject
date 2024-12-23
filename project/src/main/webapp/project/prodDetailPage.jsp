@@ -34,11 +34,13 @@ vo = dao.selectDB(vo);
 				<form action="basketProc.jsp">
 					<div class="detail_top">
 						<img src="./media/prod<%=vo.getNum()%>.jpg" alt="">
-						<div>
+						<div class="detail_top_content">
 							<input type="hidden" name="pNum" value="<%=pNum%>">
 							<h2><%=vo.getName()%></h2>
 							<h3><%=vo.getPrice()%>원</h3>
 							<p>편하게 입을 수 있는 옷입니다.</p>
+							<br>
+							<hr>
 							<br>
 							<P>색상</P>
 							<select name="color" id="color" required>
@@ -54,17 +56,11 @@ vo = dao.selectDB(vo);
 								<option value="L">L</option>
 							</select>
 							<br><br>
-							<input type="submit" value="장바구니 담기"></input>
-							<input type="button" value="구매하기"></input> 
+							<input type="submit" value="장바구니 담기" style="width: 130px" class="my_input"></input>
+							<input type="button" value="구매하기" class="my_input"></input> 
 						</div>
 					</div>
 				</form>
-				<!-- <div class="detail_bottom">
-				<img src="#" alt="">
-				<div>
-					<img src="#"> <img src="#"> <img src="#">
-					<p>설명어쩌구저쩌구이랫구저랫구구</p>
-				</div> -->
 			</div>
 			</div>
 		</section>

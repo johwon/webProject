@@ -34,6 +34,7 @@ header {
 	justify-content: space-around;
 	align-items: center;
 	height: 80px;
+	border-bottom: 1px solid gainsboro;
 }
 
 header * {
@@ -53,9 +54,6 @@ header ul a {
 	text-align: center;
 }
 
-/* header ul li:hover {
-    color: rgb(240, 248, 255);
-} */
 li.dropdown {
 	position: relative;
 }
@@ -75,13 +73,11 @@ li.dropdown {
 	padding: 15px;
 }
 
-header li:hover {
-	background-color: rgb(218, 236, 251);
-}
-
 .dropdown:hover .dropdown_content {
 	display: block;
 }
+
+
 
 .sign {
 	border: 2px solid rgb(208, 229, 255);
@@ -91,12 +87,14 @@ header li:hover {
 	font-size: 18px;
 	color: aliceblue;
 }
+header li:hover, .sign:hover, .dropdown_content a:hover {
+	background-color: rgb(218, 236, 251);
+}
 
 .carousel {
 	display: flex;
 	justify-content: center;
-	height: 500px;
-	margin:10px 0px;
+	height: 600px;
 }
 
 /* main 영역 */
@@ -130,6 +128,7 @@ main {
 .left strong {
 	font-size: x-large;
 	margin: 10px;
+	background-color: aliceblue;
 }
 
 .left li {
@@ -156,14 +155,6 @@ section {
 	align-content: center;
 }
 
-.mainBoard{
-	padding:0;
-	margin-top:50px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-}
-
 div .prod {
 	display: flex;
 	flex-direction: row;
@@ -173,11 +164,24 @@ div .prod {
 
 div .prod img {
 	width: 400px;
-	height: 390px;
+	height: 500px;
 }
 
 div .prod a {
 	margin: 20px;
+}
+
+.mainBoard{
+	padding:0;
+	margin-top:15px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	font-style: italic;
+}
+
+.mainBoard h2{
+	background-color: aliceblue;
 }
 
 /* 제품상세 */
@@ -208,6 +212,10 @@ div .prod a {
 	background-color: white;
 }
 
+.detail_top_content *{
+	margin:7px;
+}
+
 /* .detail_bottom {
 	width: 100%;
 	background-color: antiquewhite;
@@ -226,12 +234,35 @@ div .detail_bottom img {
 }
 
 /* 장바구니 */
-#basket_table {
-	border: 1px solid black;
+.basket{
+	MARGIN: 0 AUTO;
+	WIDTH: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+	text-align: center;
 }
 
+.basket *{
+	margin:13px;
+	font-size: 23px;
+	padding: 15px;
+}
+
+#basket_table th{
+	background-color: aliceblue;
+}
+
+#basket_table td{
+	border-bottom: 1px solid grey;
+}
+
+
 /* 로그인, 회원가입 폼 */
-#loginForm form, #registerForm form {
+#loginForm form, #registerForm form, #modifyForm form {
 	width: 90%;
 	margin: 0 AUTO;
 	margin-top: 10px;
@@ -253,16 +284,6 @@ table {
 	font-size: 20px;
 }
 
-#registerForm input, #registerForm select {
-	background-color: aliceblue;
-	height: 50px;
-	width: 400px;
-	border: 0px;
-	border-radius: 5px;
-	padding: 10px 5px;
-	margin: 10px 5px;
-	font-size: 20px;
-}
 
 #button1 {
 	background-color: rgb(147, 249, 215);
@@ -273,6 +294,17 @@ table {
 	font-weight: bold;
 }
 
+#registerForm input, #registerForm select, #modifyForm input, #modifyForm select {
+	background-color: aliceblue;
+	height: 50px;
+	border: 0px;
+	border-radius: 5px;
+	padding: 10px 5px;
+	margin: 10px 5px;
+	font-size: 20px;
+}
+
+
 label {
 	margin-right: 10px;
 }
@@ -281,16 +313,65 @@ label {
 	width: 90%;
 }
 
-/* 게시판 
-.section_top, .section_select {
-	display: flex;
-	align-items:center;
-	justify-content: space-between;
-} */
+.myPage {
+	border:2px solid rgb(208, 229, 255);
+	border-radius:10pt;
+	font-size:25px;
+}
+.myPage * {
+	padding:30px;
+}
+
+.deletePage td{
+	border:2px solid rgb(208, 229, 255);
+	border-collapse:collapse;
+}
+.deletePage * {
+	font-size:25px;
+	padding:20px;
+}
+
+/* 게시판 */
+.board table{
+	border:0px;
+}
+.board td{
+	border-bottom: 1px solid gainsboro;
+}
+.board th{
+	background-color: rgb(235, 245, 253);
+}
+
+.content{
+	height:300px;
+}
+
+.content td, th{
+	border-bottom: 1px solid gainsboro;
+	padding: 10px;
+	margin:10px;
+}
+
+.content th{
+	background-color: rgb(235, 245, 253);
+}
+
+.content_text{
+	height:300px;
+	border:1px solid gainsboro;
+}
+
+.my_input {
+	width:100px;
+	height:50px;
+	font-size:20px;
+	background-color:rgb(235, 245, 253);
+	border: 0px;
+}
 
 /* 푸터영역 */
 footer {
-	background-color: rgb(192, 192, 192);
+	background-color: rgb(242, 242, 242);
 	height: 200px;
 	font-size: 13px;
 	color: white;

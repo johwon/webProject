@@ -41,49 +41,47 @@ try {
 <main>
 	<section align="center">
 		<div class="center">
-			<b>글내용 보기</b> <br></br>
-			<form style="background-color: white">
-				<table width="800" border="1" cellspacing="0" cellpadding="0" align="center">
-					<tr height="30">
-						<td align="center" width="125">글번호</td>
-						<td align="center" width="125" align="center"><%=bvo.getNum()%></td>
-						<td align="center" width="125">조회수</td>
-						<td align="center" width="125" align="center"><%=bvo.getReadcount()%></td>
-					</tr>
-					<tr height="30">
-						<td align="center" width="125">작성자</td>
-						<td align="center" width="125" align="center"><%=bvo.getWriter()%></td>
-						<td align="center" width="125">작성일</td>
-						<td align="center" width="125" align="center"><%=sdf.format(bvo.getRegdate())%></td>
-					</tr>
-					<tr height="30">
-						<td align="center" width="125">글제목</td>
-						<td align="center" width="375" align="center" colspan="3"><%=bvo.getSubject()%></td>
+			<form>
+				<table width="800" cellspacing="0" cellpadding="0" align="center" class="content">
+					<tr>
+						<th align="center">글번호</th>
+						<td align="left" colspan="3"><%=bvo.getNum()%></td>
 					</tr>
 					<tr>
-						<td align="center" width="125">글내용</td>
-						<td align="left" width="375" colspan="3"><pre><%=bvo.getContent()%></pre></td>
+						<th align="center">작성자</th>
+						<td align="left" colspan="3"><%=bvo.getWriter()%></td>
 					</tr>
-					<tr height="30">
-						<td colspan="4" align="right">
-							<input type="button" value="글수정"
+					<tr>
+						<th align="center" >작성일</th>
+						<td align="left" align="center"><%=sdf.format(bvo.getRegdate())%></td>
+						<th align="center" >조회수</th>
+						<td align="left" align="center"><%=bvo.getReadcount()%></td>
+					</tr>
+					<tr>
+						<th align="center">글제목</th>
+						<td align="left" colspan="3"><%=bvo.getSubject()%></td>
+					</tr>
+					<tr>
+						<td align="left" width="375" colspan="4" class="content_text"><pre><%=bvo.getContent()%></pre></td>
+					</tr>
+				</table>
+				<br>
+						<div align="center">
+							<input type="button" value="글수정" class="my_input"
 							onclick="document.location.href='updateForm.jsp?num=<%=_num%>&pageNum=<%=pageNum%>'">
 							&nbsp;&nbsp;&nbsp;&nbsp; 
 							
-							<input type="button" value="답글쓰기" 
+							<input type="button" value="답글쓰기" class="my_input"
 							onclick="document.location.href='writeForm.jsp?num=<%=num%>&ref=<%=ref%>&step=<%=step%>&depth=<%=depth%>'">
 							&nbsp;&nbsp;&nbsp;&nbsp; 
 							
-							<input type="button" value="글삭제"
+							<input type="button" value="글삭제" class="my_input"
 							onclick="document.location.href='boardDeleteForm.jsp?num=<%=_num%>&pageNum=<%=pageNum%>'">
 							&nbsp;&nbsp;&nbsp;&nbsp;
 							
-							<input type="button" value="글목록"
+							<input type="button" value="글목록" class="my_input"
 							onclick="document.location.href='boardList.jsp?pageNum=<%=pageNum%>'">
-
-						</td>
-					</tr>
-				</table>
+						</div>
 			</form>
 		</div>
 	</section>

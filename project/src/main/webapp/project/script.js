@@ -248,10 +248,10 @@ function onLoad(){
 	   // 폼객체 가져오기
 	   const registerFom = document.querySelector(".registerform");
 
-	   // 이벤트리스너
+	   /*// 이벤트리스너
 	   inputID.addEventListener("blur",()=>validate(inputID, idPattern, "영 대소문자, 4글자 이상 입력"));
 	   inputPWD.addEventListener("blur",()=>validate(inputPWD, pwdPattern, "영 대소문자,숫자, 8자 이상 입력"));
-	   /*inputPWD2.addEventListener("blur",()=>{
+	   inputPWD2.addEventListener("blur",()=>{
 	       validate(inputPWD2, pwdPattern, "영 대소문자,숫자, 6~10자 입력");
 	       if(inputPWD.value !== inputPWD2.value){
 	           inputPWD2.nextSibling.textContent = "비밀번호가 일치하지 않습니다."
@@ -260,8 +260,8 @@ function onLoad(){
 	           inputPWD2.focus();
 	           return;
 	       }
-	   });*/
-	   inputName.addEventListener("blur",()=>validate(inputName, namePattern, "한글로 입력"));
+	   });
+	   inputName.addEventListener("blur",()=>validate(inputName, namePattern, "한글로 입력"));*/
 	   
 	   //이벤트핸들러
 	   function validate(userInput, pattern, message){
@@ -270,7 +270,7 @@ function onLoad(){
 	           userInput.nextSibling.style.color = "blue";
 	       }else{
 	           userInput.nextSibling.textContent = message;
-	           userInput.nextSibling.textContent.style.color = "red";
+	           userInput.nextSibling.style.color = "red";
 	           userInput.nextSibling.textContent.style.size = "7px";
 	           userInput.value = "";
 	           userInput.focus();
@@ -287,24 +287,5 @@ function onLoad(){
 	       validate(inputPhone1, phonePattern, "숫자 세자리 이상 입력");
 	       validate(inputPhone2, phonePattern, "숫자 세자리 이상 입력");
 	       validate(inputPhone3, phonePattern, "숫자 세자리 이상 입력");
-	       alert("서버로 전송합니다");
 	       document.registerForm.submit();})
 }
-
-/*//체크박스 value 가져오기
-function getCheckboxValue()  {
-  // 선택된 목록 가져오기
-  const query = 'input[name="animal"]:checked';
-  const selectedEls = 
-      document.querySelectorAll(query);
-  
-  // 선택된 목록에서 value 찾기
-  let result = '';
-  selectedEls.forEach((el) => {
-    result += el.value + ' ';
-  });
-  
-  // 출력
-  document.getElementById('result').innerText
-    = result;
-}*/

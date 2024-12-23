@@ -25,11 +25,11 @@ int count = bdao.selectCountDB(vo);
 	url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Kablammo&family=Nanum+Gothic&family=Oxanium:wght@200..800&display=swap')
 	;
 
-table, th, td{
+/* table, th, td{
 	border: 1px solid black;
 	font-size: 25px;
 	padding: 15px;
-}
+} */
 </style>
 <script src="https://kit.fontawesome.com/7ab22df35b.js"></script>
 <script src="script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
@@ -39,6 +39,7 @@ table, th, td{
 	<main>
 		<%@ include file="./aside.jsp"%>
 		<section>
+			<div class="basket">
 			<h2>나의 장바구니</h2>
 			<%
 			if (count == 0) {
@@ -74,9 +75,10 @@ table, th, td{
 					}
 					%>
 				</table>
-				<input type="submit" value="선택한 상품 삭제하기"> 
-				<input type="button" value="선택한 상품 주문하기">
+				<input type="submit" value="선택한 상품 삭제하기" class="my_input" style="width: 210px;"> 
+				<input type="button" value="선택한 상품 주문하기" class="my_input" style="width: 210px;">
 			</form>
+			</div>
 		</section>
 	</main>
 	<%@ include file="./bottom.jsp"%>

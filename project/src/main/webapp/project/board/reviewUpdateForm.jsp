@@ -34,12 +34,12 @@ try {
 <%@ include file="../header.jsp"%>
 <main>
 	<section align="center">
-		<div class="center">
-		<b>글수정</b> <br>
+		<div style="margin-top:50px;">
+		<h2>글수정</h2> <br>
 		<form method="post" name="writeform" action="reviewUpdateProc.jsp?pageNum=<%=pageNum%>"
-			onsubmit="return writeSave()" style="background-color: white">
+			onsubmit="return writeSave()" class="content">
 			<input type="hidden" name="num" value="<%=article.getNum()%>">
-			<table width="600px" border="1" cellspacing="0" cellpadding="0"
+			<table width="600px" border="0" cellspacing="0" cellpadding="0"
 				align="center" >
 				<tr>
 					<td width="200px" align="center">이 름</td>
@@ -77,9 +77,9 @@ try {
 				</tr>
 				<tr>
 					<td colspan=2 align="center">
-						<input type="submit" value="글수정"> 
-						<input type="reset"	value="다시작성"> 
-						<input type="button" value="목록보기" onclick="document.location.href='reviewList.jsp?pageNum=<%=pageNum%>'">
+						<input type="submit" value="글수정" class="my_input"> 
+						<input type="reset"	value="다시작성" class="my_input"> 
+						<input type="button" value="목록보기" class="my_input" onclick="document.location.href='reviewList.jsp?pageNum=<%=pageNum%>'">
 					</td>
 				</tr>
 			</table>

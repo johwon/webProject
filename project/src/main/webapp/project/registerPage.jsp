@@ -18,23 +18,23 @@
 	<main>
 		<section align="center">
 			<div class="center">
-				<h3 align="center">회원가입</h3>
+				<h2 align="center">회원가입</h2><br>
 				<form action="registerDB.jsp" method="post" name="registerForm" id="registerForm">
 					<fieldset style="border: 0px;">
 						<table align="center">
 							<tr>
 								<th>아이디</th>
-								<td><input type="text" name="id" id="id">&nbsp;<input
-									type="button" value="중복확인" onClick="idCheck()" /></td>
+								<td><input type="text" name="id" id="id" placeholder="영 대소문자, 4자 이상">
+								<input type="button" value="중복확인" onClick="idCheck()"/></td>
 							</tr>
 							<tr>
 								<th><label for="pwd">비밀번호</label></th>
 								<td><input type="password" name="pwd" id="pwd"
-									placeholder="영문 대문자, 소문자, 숫자 포함 8자 이상" size="33px">&nbsp;</td>
+									placeholder="영 대문자, 소문자, 숫자 포함 8자 이상" size="33px"></td>
 							</tr>
 							<tr>
 								<th><label for="name">이름</label></th>
-								<td><input type="text" name="name" id="name">&nbsp;</td>
+								<td><input type="text" name="name" id="name"></td>
 							</tr>
 							<tr>
 								<th><label for="phone">전화번호</label></th>
@@ -50,7 +50,6 @@
 										<option value="naver">naver.com</option>
 										<option value="gmail">gmail.com</option>
 										<option value="daum">daum.net</option>
-										<option value="other">직접 입력</option>
 								</select>
 							</tr>
 							<tr>
@@ -78,7 +77,6 @@
 				</form>
 			</div>
 		</section>
-		<aside class="right"></aside>
 	</main>
 	<%@ include file="./bottom.jsp"%>
 </body>

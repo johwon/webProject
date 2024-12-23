@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>웹페이지</title>
 <link rel="stylesheet" href="./main.css?after" type="text/css">
-<link rel="stylesheet" href="./carousel.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
@@ -44,14 +43,18 @@
 				<%
 				} else {
 				%>
-				<table width='400' align="center">
+				<table align="center" class="myPage">
 					<tr>
-						<td width='300' align='center'><%=sessionId%> 님 어서오세요.</td>
+						<td align='center'><%=sessionId%> 님 어서오세요.</td>
 					</tr>
 					<tr>
-						<td align='center'><a href=modifyPage.jsp>회원정보 수정</a>
-							&nbsp;&nbsp; <a href=deletePage.jsp>회원 탈퇴</a> &nbsp;&nbsp; <a
-							href='logout.jsp'>로그아웃</a></td>
+						<td align='center'>
+							<a href=modifyPage.jsp>회원정보 수정</a>
+							&nbsp;&nbsp; 
+							<a href=deletePage.jsp>회원 탈퇴</a> 
+							&nbsp;&nbsp; 
+							<a href='logout.jsp'>로그아웃</a>
+						</td>
 					</tr>
 				</table>
 				<%
@@ -59,7 +62,6 @@
 				%>
 			</div>
 		</section>
-		<aside class="right"></aside>
 	</main>
 	<%@ include file="./bottom.jsp"%>
 </body>

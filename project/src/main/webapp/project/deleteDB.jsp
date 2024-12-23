@@ -23,7 +23,7 @@ if (flag == true) {
 <meta http-equiv="Refresh" content="3;url=login.jsp">
 <body>
 	<main>
-		<font size="5" face="바탕체"> 회원정보가 삭제되었습니다<br></br> 안녕히 가세요 ! ㅠ.ㅠ<br></br>
+		<font size="5" face="바탕체"> 회원정보가 삭제되었습니다<br></br><br></br>
 			3초후에 로그인 페이지로 이동합니다
 		</font>
 	</main>
@@ -38,4 +38,5 @@ if (flag == true) {
 	}
 	%>
 </body>
+<%@ include file="./bottom.jsp"%>
 </html>

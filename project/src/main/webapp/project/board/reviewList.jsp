@@ -52,8 +52,10 @@
 	<main>
 		<section align="center">
 			<div class="center">
-				<b>REVIEW(전체 글:<%=count%>)</b>
+				<h2>REVIEW</h2>
 				<div align="right">
+					<h3 align="right"><a href="reviewWriteForm.jsp">글쓰기</a></h3>
+					<br>
 					<form action="reviewSearchProc.jsp">
 						<select name="searchOpt">
 							<option value="subject">제목</option>
@@ -63,16 +65,12 @@
 						<input type="submit" value="검색">
 					</form>
 				</div>
-				<table width="1000">
-					<tr>
-						<td align="right"><a href="reviewWriteForm.jsp">글쓰기</a></td>
-					</tr>
-				</table>
+				<br>
 				<%
 				if(count==0){
 				%>
 				<table width="1000" border="1" cellpadding="0" cellspacing="0"
-					style="background-color: white">
+					>
 					<tr>
 						<td align="center">게시판에 저장된 글이 없습니다.</td>
 					</tr>
@@ -80,9 +78,9 @@
 				<%
 				} else {
 				%>
-				<table border="1" width="1000" cellpadding="0" cellspacing="0"
-					align="center">
-					<tr height="30">
+				<table border="0" width="1000" cellpadding="0" cellspacing="0"
+					align="center" class="board">
+					<tr height="50">
 						<th align="center" width="50">번 호</th>
 						<th align="center" width="250">제 목</th>
 						<th align="center" width="100">작성자</th>
@@ -93,7 +91,7 @@
 					<%
 					for(ReviewBoardVO article : boardList){
 					%>
-					<tr height="30">
+					<tr height="50">
 						<td align="center" width="50"><%=number--%></td>
 						<!-- 제목 -->
 						<td align="left" width="250">
@@ -110,7 +108,7 @@
 <%
  								}
 %> 							
- 								<%=article.getSubject()%></a> 
+ 								&nbsp;<%=article.getSubject()%></a> 
 <%
  								if (article.getReadcount() >= 20) {
 %> 

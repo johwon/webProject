@@ -55,8 +55,10 @@ number = count - (currentPage - 1) * pageSize;
 	<main>
 		<section align="center">
 			<div class="center">
-				<b>문의게시판(전체 글:<%=count%>)</b>
+				<h2>문의게시판</h2>
 				<div align="right">
+					<h3 align="right"><a href="writeForm.jsp">글쓰기</a></h3>
+					<br>
 					<form action="boardSearchProc.jsp">
 						<select name="searchOpt">
 							<option value="subject">제목</option>
@@ -66,11 +68,7 @@ number = count - (currentPage - 1) * pageSize;
 						<input type="submit" value="검색">
 					</form>
 				</div>
-				<table width="1000">
-					<tr>
-						<td align="right"><a href="writeForm.jsp">글쓰기</a></td>
-					</tr>
-				</table>
+				<br>
 				<%
 				if (count == 0) {
 				%>
@@ -83,9 +81,9 @@ number = count - (currentPage - 1) * pageSize;
 				<%
 				} else {
 				%>
-				<table border="1" width="1000" cellpadding="0" cellspacing="0"
-					align="center">
-					<tr height="30">
+				<table border="0" width="1000" cellpadding="0" cellspacing="0"
+					align="center" class="board">
+					<tr height="50">
 						<th align="center" width="50">번 호</th>
 						<th align="center" width="250">제 목</th>
 						<th align="center" width="100">작성자</th>
@@ -95,7 +93,7 @@ number = count - (currentPage - 1) * pageSize;
 					<%
 					for (BoardVO article : boardList) {
 					%>
-					<tr height="30">
+					<tr height="50" style="border-bottom:1px;">
 						<td align="center" width="50"><%=number--%></td>
 						<!-- 제목 -->
 						<td align="left" width="250">
@@ -112,7 +110,7 @@ number = count - (currentPage - 1) * pageSize;
 <%
  								}
 %> 							
- 								<%=article.getSubject()%></a> 
+ 								&nbsp;<%=article.getSubject()%></a> 
 <%
  								if (article.getReadcount() >= 20) {
 %> 

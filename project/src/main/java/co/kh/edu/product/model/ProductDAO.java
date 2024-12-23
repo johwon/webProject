@@ -22,6 +22,7 @@ public class ProductDAO {
 	
 	private final String SELECT_SQL = "SELECT * FROM PRODUCT WHERE NUM=?";
 	private final String SELECT_NAME_SQL = "SELECT * FROM PRODUCT WHERE NAME LIKE UPPER(?)";
+	private final String SELECT_ALL_SQL = "SELECT * FROM PRODUCT";
 	
 	public ProductVO selectDB(ProductVO vo) {
 		ConnectionPool cp = ConnectionPool.getInstance();
@@ -58,6 +59,32 @@ public class ProductDAO {
 		try {
 			pstmt=con.prepareStatement(SELECT_NAME_SQL);
 			pstmt.setString(1, vo.getName());
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				String name = rs.getString("name");
+				int num = rs.getInt("num");
+				int price = rs.getInt("price");
+				pvo = new ProductVO(num, name, price);
+				list.add(pvo);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			cp.dbClose(con, pstmt, rs);
+		}
+		return list;
+	}
+	
+	public ArrayList<ProductVO> selectAllDB(ProductVO vo) {
+		ConnectionPool cp = ConnectionPool.getInstance();
+		Connection con = cp.dbCon();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		ArrayList<ProductVO> list = new ArrayList<ProductVO>();
+		ProductVO pvo = null;
+		
+		try {
+			pstmt=con.prepareStatement(SELECT_ALL_SQL);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				String name = rs.getString("name");

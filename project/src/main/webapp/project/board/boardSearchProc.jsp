@@ -95,9 +95,9 @@ number = count - (currentPage - 1) * pageSize;
 				<%
 				} else {
 				%>
-				<table border="1" width="1000" cellpadding="0" cellspacing="0"
-					align="center">
-					<tr height="30">
+				<table border="0" width="1000" cellpadding="0" cellspacing="0"
+					align="center" class="board">
+					<tr height="50">
 						<th align="center" width="50">번 호</th>
 						<th align="center" width="250">제 목</th>
 						<th align="center" width="100">작성자</th>
@@ -107,7 +107,7 @@ number = count - (currentPage - 1) * pageSize;
 					<%
 					for (BoardVO article : boardList) {
 					%>
-					<tr height="30">
+					<tr height="50">
 						<td align="center" width="50"><%=number--%></td>
 						<td align="left" width="250">
 							<!-- 수정 <5> --> <a
@@ -118,12 +118,12 @@ number = count - (currentPage - 1) * pageSize;
 								int wid = 0;
 								if (article.getDepth() > 0) {
 									wid = 5 * article.getDepth();
-								%> <img src="images/level.gif" width="<%=wid%>" height="16">
-								<!-- 공백 --> <img src="images/re.gif"> <%
+								%> <img src="../media/level.gif" width="<%=wid%>" height="16">
+								<!-- 공백 --> <img src="../media/re.gif"> <%
  }
  %> <%=article.getSubject()%></a> <%
  if (article.getReadcount() >= 20) {
- %> <img src="images/hot.gif" border="0" height="16"> <%
+ %> <img src="../media/hot.gif" border="0" height="16"> <%
  }
  %>
 						</td>

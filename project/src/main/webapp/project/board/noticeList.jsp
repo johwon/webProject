@@ -3,35 +3,35 @@
 <%@page import="co.kh.edu.noticeBoard.model.NoticeBoardVO"%>
 <%@page import="co.kh.edu.noticeBoard.model.NoticeBoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%
 //1. 페이징기법 - 페이지사이즈:1페이지에 10개
-	int pageSize = 10;
+int pageSize = 10;
 //2. 페이징기법 - 페이지번호 선택
-	request.setCharacterEncoding("UTF-8");
-	String pageNum = request.getParameter("pageNum");
-	if(pageNum==null){
-		pageNum="1";
-	}
+request.setCharacterEncoding("UTF-8");
+String pageNum = request.getParameter("pageNum");
+if (pageNum == null) {
+	pageNum = "1";
+}
 //3. 현재페이지 설정, start end
-	int currentPage = Integer.parseInt(pageNum);
-	int start = (currentPage-1)*pageSize+1;
-	int end = currentPage * pageSize;
-	
-	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+int currentPage = Integer.parseInt(pageNum);
+int start = (currentPage - 1) * pageSize + 1;
+int end = currentPage * pageSize;
+
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
 //4. 해당된 페이지 10개를 가져온다
-	int number = 0;	
-	ArrayList<NoticeBoardVO> boardList = null;
-	NoticeBoardDAO dao = NoticeBoardDAO.getInstance();
-	
-	int count = dao.selectCountDB();
-	if(count>0){
-		boardList = dao.selectStartEndDB(start, end);
-	}
-	number = count - (currentPage -1) * pageSize;	//글번호
-	
-	NoticeBoardVO vo = new NoticeBoardVO();
+int number = 0;
+ArrayList<NoticeBoardVO> boardList = null;
+NoticeBoardDAO dao = NoticeBoardDAO.getInstance();
+
+int count = dao.selectCountDB();
+if (count > 0) {
+	boardList = dao.selectStartEndDB(start, end);
+}
+number = count - (currentPage - 1) * pageSize; //글번호
+
+NoticeBoardVO vo = new NoticeBoardVO();
 %>
 <!DOCTYPE html>
 <html>
@@ -52,23 +52,21 @@
 	<main>
 		<section align="center">
 			<div class="center">
-				<b>공지사항(전체 글:<%=count%>)</b>
+				<h2>공지사항</h2>
 				<div align="right">
+					<h3 align="right"><a href="noticeWriteForm.jsp">글쓰기</a></h3>
+					<br>
 					<form action="noticeSearchProc.jsp">
 						<select name="searchOpt">
 							<option value="subject">제목</option>
-						</select> 
-						<input type="text" name="search"> 
-						<input type="submit" value="검색">
+						</select> <input type="text" name="search"> <input type="submit"
+							value="검색">
 					</form>
 				</div>
-				<table width="1000">
-					<tr>
-						<td align="right"><a href="noticeWriteForm.jsp">글쓰기</a></td>
-					</tr>
-				</table>
+				<br>
+
 				<%
-				if(count==0){
+				if (count == 0) {
 				%>
 				<table width="1000" border="1" cellpadding="0" cellspacing="0"
 					style="background-color: white">
@@ -79,9 +77,9 @@
 				<%
 				} else {
 				%>
-				<table border="1" width="1000" cellpadding="0" cellspacing="0"
-					align="center">
-					<tr height="30">
+				<table border="0" width="1000" cellpadding="0" cellspacing="0"
+					align="center" class="board">
+					<tr height="50">
 						<th align="center" width="50">번 호</th>
 						<th align="center" width="250">제 목</th>
 						<th align="center" width="100">작성자</th>
@@ -89,61 +87,62 @@
 						<th align="center" width="50">조 회</th>
 					</tr>
 					<%
-					for(NoticeBoardVO article : boardList){
+					for (NoticeBoardVO article : boardList) {
 					%>
-					<tr height="30">
+					<tr height="50">
 						<td align="center" width="50"><%=number--%></td>
 						<!-- 제목 -->
-						<td align="left" width="250">
-							<a href="noticeContent.jsp?num=<%=article.getNum()%>&pageNum=1">
- 							<%=article.getSubject()%></a> 
-						</td>
-						<td align="center" width="100">
-							<a href="mailto:<%=article.getEmail()%>"> <%=article.getWriter()%></a>
+						<td align="left" width="250"><a
+							href="noticeContent.jsp?num=<%=article.getNum()%>&pageNum=1">
+								&nbsp;<%=article.getSubject()%></a></td>
+						<td align="center" width="100"><a
+							href="mailto:<%=article.getEmail()%>"> <%=article.getWriter()%></a>
 						</td>
 						<td align="center" width="150"><%=sdf.format(article.getRegdate())%></td>
 						<td align="center" width="50"><%=article.getReadcount()%></td>
 					</tr>
 					<%
-					}//end of for
+					} //end of for
 					%>
 				</table>
 				<br> <br>
 				<div align="center">
 					<%
-					if(count>0){
+					if (count > 0) {
 						int pageBlock = 3; //??
-						int imsi = count%pageSize == 0 ? 0 : 1;
+						int imsi = count % pageSize == 0 ? 0 : 1;
 						int pageCount = count / pageSize + imsi;
-						int startPage = (int)((currentPage-1) / pageBlock ) * pageBlock + 1;
+						int startPage = (int) ((currentPage - 1) / pageBlock) * pageBlock + 1;
 						int endPage = startPage + pageBlock - 1;
-						if(endPage > pageCount){
+						if (endPage > pageCount) {
 							endPage = pageCount;
 						}
-						if(startPage > pageBlock){
-						%>
-						<a href="noticeList.jsp?pageNum=<%=startPage - pageBlock%>">[이전]</a>
-						<%
-						}
-						for(int i = startPage; i <= endPage; i++ ){
-							if(currentPage == i) {
-							%>
-							<a href="noticeList.jsp?pageNum=<%=i%>"><b>[<%=i%>]</b> </a>
-							<%
-							} else{
-							%>
-							<a href="noticeList.jsp?pageNum=<%=i%>">[<%=i%>]</a>
-							<%
-							}
-						}//end of for
-						if( endPage < pageCount){
-							%>
-							<a href="noticeList.jsp?pageNum=<%=startPage + pageBlock%>">[다음]</a>
-						<%
-						}
+						if (startPage > pageBlock) {
+					%>
+					<a href="noticeList.jsp?pageNum=<%=startPage - pageBlock%>">[이전]</a>
+					<%
 					}
-				}
-						%>
+					for (int i = startPage; i <= endPage; i++) {
+					if (currentPage == i) {
+					%>
+					<a href="noticeList.jsp?pageNum=<%=i%>"><b>[<%=i%>]
+					</b> </a>
+					<%
+					} else {
+					%>
+					<a href="noticeList.jsp?pageNum=<%=i%>">[<%=i%>]
+					</a>
+					<%
+					}
+					} //end of for
+					if (endPage < pageCount) {
+					%>
+					<a href="noticeList.jsp?pageNum=<%=startPage + pageBlock%>">[다음]</a>
+					<%
+					}
+					}
+					}
+					%>
 				</div>
 			</div>
 		</section>

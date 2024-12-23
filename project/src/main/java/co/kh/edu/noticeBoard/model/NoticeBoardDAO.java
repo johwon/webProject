@@ -209,9 +209,7 @@ public class NoticeBoardDAO {
 				int depth = rs.getInt("depth");
 				String content = rs.getString("content");
 				String ip = rs.getString("ip");
-				int rate = rs.getInt("rate");
-				bvo = new NoticeBoardVO(num, writer, email, subject, pass, readcount, ref, step, depth, regdate,
-						content, ip);
+				bvo = new NoticeBoardVO(num, writer, email, subject, pass, readcount, ref, step, depth, regdate, content, ip);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

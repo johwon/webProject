@@ -6,7 +6,7 @@
 		<ul>
 			<li class="dropdown"><a href="#">BEST</a>
 				<div class="dropdown_content">
-					<a href="#">1.menu</a> <a href="#">2.menu</a> <a href="#">3.menu</a>
+					<a href="#">TOP</a> <a href="#">BOTTOM</a> <a href="#">ACC</a>
 				</div></li>
 			<li><a href="<%=request.getContextPath()%>/project/board/noticeList.jsp">공지사항</a></li>
 			<li><a href="<%=request.getContextPath()%>/project/board/boardList.jsp">문의게시판</a></li>
