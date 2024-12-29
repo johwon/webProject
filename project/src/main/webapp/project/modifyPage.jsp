@@ -29,14 +29,20 @@ cvo = cdao.selectOneDB(cvo);
 	rel="stylesheet">
 <script src="https://kit.fontawesome.com/7ab22df35b.js"></script>
 <script src="script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
+<style>
+	td input{
+	background-color: black;	
+	text-align: left;
+	}
+</style>
 </head>
 <body>
 <%@ include file="./header.jsp"%>
 <main>
 	<section align="center">
 		<div class="center">
-			<h2 align="center">회원정보 수정</h2><br>
 			<form action="modifyDB.jsp" method="post" name="modifyForm" id="modifyForm">
+			<h2 align="center">회원정보 수정</h2><br>
 				<fieldset style="border: 0px;">
 					<table align="center">
 						<tr>

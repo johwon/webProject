@@ -43,20 +43,18 @@ try {
 					action="noticeWriteProc.jsp" onsubmit="return writeSave()"
 					class="content">
 					<input type="hidden" name="num" value="<%=num%>"> 
-					<table width="800" border="0" cellpadding="0" cellspacing="0" align="center">
-							<th align="right" colspan="2""><a href="noticeList.jsp">글목록</a></th>
-						</tr>
+					<table width="700px" border="0" cellpadding="0" cellspacing="0" align="center">
 						<tr>
 							<th width="150" align="center">이름</th>
-							<td width="330">관리자</td>
+							<td width="330" align="left">관리자</td>
 						</tr>
 						<tr>
 							<th width="150" align="center">이메일</th>
-							<td width="330">admin@gmail.com</td>
+							<td width="330" align="left">admin@gmail.com</td>
 						</tr>
 						<tr>
 							<th width="150" align="center">제목</th>
-							<td width="330">
+							<td width="330" align="left">
 							<%
 								if (request.getParameter("num") == null) {
 							%> 		<input type="text" size="50" maxlength="50" name="subject" /> 
@@ -67,12 +65,12 @@ try {
 						</tr>
 						<tr>
 							<th width="100" align="center">내용</th>
-							<td width="330"><textarea name="content" rows="13" cols="50"></textarea>
+							<td width="330" align="left"><textarea name="content" rows="13" cols="50"></textarea>
 							</td>
 						</tr>
 						<tr>
 							<th width="100" align="center">비밀번호</th>
-							<td width="330"><input type="password" size="10"
+							<td width="330" align="left"><input type="password" size="10"
 								maxlength="10" name="pass" /></td>
 						</tr>
 						<tr>

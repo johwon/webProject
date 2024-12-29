@@ -42,29 +42,29 @@ try {
 			<table width="600px" border="0" cellspacing="0" cellpadding="0"
 				align="center" >
 				<tr>
-					<td width="200px" align="center">이 름</td>
+					<th width="200px" align="center">이 름</th>
 					<td align="left" width="500px"><input type="text" size="30"
 						maxlength="10" name="writer" value="<%=article.getWriter()%>">
 					</td>
 				</tr>
 				<tr>
-					<td width="200px" align="center">제 목</td>
+					<th width="200px" align="center">제 목</th>
 					<td align="left" width="500px"><input type="text" size="60"
 						maxlength="50" name="subject" value="<%=article.getSubject()%>"></td>
 				</tr>
 				<tr>
-					<td width="200px" align="center">Email</td>
+					<th width="200px" align="center">Email</th>
 					<td align="left" width="500px"><input type="text" size="60"
 						maxlength="30" name="email" value="<%=article.getEmail()%>"></td>
 				</tr>
 				<tr>
-					<td width="200px" align="center">내 용</td>
+					<th width="200px" align="center">내 용</th>
 					<td align="left" width="500px"><textarea name="content"
 							rows="20" cols="60">
  					<%=article.getContent()%></textarea></td>
 				</tr>
 				<tr>
-					<td width="200px" align="center">비밀번호</td>
+					<th width="200px" align="center">비밀번호</th>
 					<td align="left" width="500px"><input type="password" size="15"
 						maxlength="12" name="pass"></td>
 				</tr>
@@ -72,14 +72,13 @@ try {
 					<td colspan=2 align="center">
 						<input type="submit" value="글수정" class="my_input"> 
 						<input type="reset"	value="다시작성" class="my_input"> 
-						<input type="button" value="목록보기" class="my_input" onclick="document.location.href='boarList.jsp?pageNum=<%=pageNum%>'">
+						<input type="button" value="목록보기" class="my_input" onclick="document.location.href='boardList.jsp?pageNum=<%=pageNum%>'">
 					</td>
 				</tr>
 			</table>
 		</form>
 		</div>
 	</section>
-	<aside class="right"></aside>
 </main>
 <%
 	} catch (Exception e) {

@@ -24,6 +24,7 @@
 				// 1. 세션 정보를 가져오기 (세션이 없으면 null 반환)
 				if (sessionId == null) {
 				%>
+				<div class="form">
 				<h2>LOGIN</h2>
 				<br>
 				<form action="loginCheck.jsp" method="post" id="loginForm">
@@ -40,6 +41,7 @@
 					<input type="submit" value="로그인" size="300px"> <br>
 					<a href='registerPage.jsp'><input type='button' value='회원가입'></a>
 				</form>
+				</div>
 				<%
 				} else {
 				%>

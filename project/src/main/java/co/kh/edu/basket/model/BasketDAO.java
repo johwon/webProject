@@ -25,7 +25,7 @@ public class BasketDAO {
 	}
 	
 	private static String size = "B.\"SIZE\"";
-	public static String SELECT_SQL="SELECT B.NUM, B.C_ID, B.P_NUM,"+size+", B.COLOR, P.NAME, P.PRICE FROM BASKET B INNER JOIN PRODUCT P ON B.P_NUM=P.NUM WHERE C_ID=?";
+	public static String SELECT_SQL="SELECT B.NUM, B.C_ID, B.P_NUM,"+size+", B.COLOR, P.NAME, P.PRICE FROM BASKET B INNER JOIN PRODUCT P ON B.P_NUM=P.NUM WHERE C_ID=? ORDER BY P_NUM";
 	public static String SELECT_COUNT_SQL="SELECT COUNT(*) AS COUNT FROM BASKET WHERE C_ID=?";
 	public static String INSERT_SQL="INSERT INTO BASKET VALUES(BASKET_SEQ.NEXTVAL, ?, ?, ?, ?)";
 	public static String DELETE_SQL="DELETE FROM BASKET WHERE NUM = ?";

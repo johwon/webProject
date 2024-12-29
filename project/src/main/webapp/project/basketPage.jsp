@@ -24,12 +24,6 @@ int count = bdao.selectCountDB(vo);
 @import
 	url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Kablammo&family=Nanum+Gothic&family=Oxanium:wght@200..800&display=swap')
 	;
-
-/* table, th, td{
-	border: 1px solid black;
-	font-size: 25px;
-	padding: 15px;
-} */
 </style>
 <script src="https://kit.fontawesome.com/7ab22df35b.js"></script>
 <script src="script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
@@ -72,12 +66,14 @@ int count = bdao.selectCountDB(vo);
 					</tr>
 					<%
 					}
-					}
 					%>
 				</table>
-				<input type="submit" value="선택한 상품 삭제하기" class="my_input" style="width: 210px;"> 
-				<input type="button" value="선택한 상품 주문하기" class="my_input" style="width: 210px;">
+				<input type="submit" value="선택한 상품 삭제하기" class="my_input2" > 
+				<input type="button" value="선택한 상품 주문하기" class="my_input2" >
 			</form>
+					<%
+					}
+					%>
 			</div>
 		</section>
 	</main>

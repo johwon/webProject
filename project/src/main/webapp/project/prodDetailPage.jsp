@@ -55,8 +55,10 @@ vo = dao.selectDB(vo);
 								<option value="M">M</option>
 								<option value="L">L</option>
 							</select>
+							<P>수량</P>
+							<input type="number" value="1" name="quantity" id="quantity" required>
 							<br><br>
-							<input type="submit" value="장바구니 담기" style="width: 130px" class="my_input"></input>
+							<input type="submit" value="장바구니 담기" class="my_input"></input>
 							<input type="button" value="구매하기" class="my_input"></input> 
 						</div>
 					</div>

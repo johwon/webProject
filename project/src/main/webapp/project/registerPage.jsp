@@ -18,8 +18,8 @@
 	<main>
 		<section align="center">
 			<div class="center">
-				<h2 align="center">회원가입</h2><br>
 				<form action="registerDB.jsp" method="post" name="registerForm" id="registerForm">
+				<h2 align="center">회원가입</h2><br>
 					<fieldset style="border: 0px;">
 						<table align="center">
 							<tr>

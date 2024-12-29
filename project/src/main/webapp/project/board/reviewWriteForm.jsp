@@ -41,24 +41,21 @@ try {
 					<input type="hidden" name="ref" value="<%=ref%>"> 
 					<input type="hidden" name="step" value="<%=step%>"> 
 					<input type="hidden" name="depth" value="<%=depth%>">
-					<table width="800" cellpadding="0" cellspacing="0"
+					<table width="700" cellpadding="0" cellspacing="0"
 						align="center">
 						<tr>
-							<th align="right" colspan="2""><a href="boardList.jsp">글목록</a></th>
-						</tr>
-						<tr>
 							<th width="150" align="center">이름</th>
-							<td width="330"><input type="text" size="12" maxlength="12"
+							<td width="330" align="left"><input type="text" size="12" maxlength="12"
 								name="writer" /></td>
 						</tr>
 						<tr>
 							<th width="150" align="center">이메일</th>
-							<td width="330"><input type="text" size="30" maxlength="30"
+							<td width="330" align="left"><input type="text" size="30" maxlength="30"
 								name="email" /></td>
 						</tr>
 						<tr>
 							<th width="150" align="center">제목</th>
-							<td width="330">
+							<td width="330" align="left">
 								<%
 								if (request.getParameter("num") == null) {
 								%> <input type="text" size="50" maxlength="50" name="subject" /> <%
@@ -70,19 +67,19 @@ try {
 						</tr>
 						<tr>
 							<th width="100" align="center">내용</th>
-							<td width="330"><textarea name="content" rows="13" cols="50"></textarea>
+							<td width="330" align="left"><textarea name="content" rows="13" cols="50"></textarea>
 							</td>
 						</tr>
-						<tr>
+						<!-- <tr>
 						 <th>첨부파일 </th>
-						 <td><input type="file" name="fileName"></td>
-						</tr>
+						 <td align="left"><input type="file" name="fileName"></td>
+						</tr> -->
 						<%
 						if (request.getParameter("num") == null) {
 						%> 
 						<tr>
 							<th width="100" align="center">평점</th> 
-							<td width="330"><input type="number" size="10"
+							<td width="330" align="left"><input type="number" size="10"
 								min="1" max="5" value="1" name="rate" /></td>
 						</tr>
 						<%
@@ -94,7 +91,7 @@ try {
 						%>
 						<tr>
 							<th width="100" align="center">비밀번호</th>
-							<td width="330"><input type="password" size="10"
+							<td width="330" align="left"><input type="password" size="10"
 								maxlength="10" name="pass" /></td>
 						</tr>
 						<tr>

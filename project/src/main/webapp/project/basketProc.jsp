@@ -15,6 +15,9 @@
 	int pNum = Integer.parseInt(request.getParameter("pNum")) ;
 	String size = request.getParameter("size");
 	String color = request.getParameter("color");
+	System.out.println(request.getParameter("quantity"));
+	int quantity = Integer.parseInt(request.getParameter("quantity"));
+	System.out.println(quantity);
 	
 	BasketDAO bdao = BasketDAO.getInstance();
 	BasketVO vo = new BasketVO();
@@ -23,7 +26,13 @@
 	vo.setSize(size);
 	vo.setColor(color);
 	
-	boolean flag = bdao.insertDB(vo);
+	boolean flag = false;
+	for(int i=0;i<quantity;i++){
+		flag = bdao.insertDB(vo);
+		if(flag==false){
+			break;
+		}
+	};
 	if(flag){
     %>
     <script>

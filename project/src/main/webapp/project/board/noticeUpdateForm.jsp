@@ -39,29 +39,29 @@ try {
 		<form method="post" name="writeform" action="noticeUpdateProc.jsp?pageNum=<%=pageNum%>"
 		onsubmit="return writeSave()" style="background-color: white">
 			<input type="hidden" name="num" value="<%=article.getNum()%>">
-			<table width="600px" border="0" cellspacing="0" cellpadding="0" align="center" class="content">
+			<table width="700px" border="0" cellspacing="0" cellpadding="0" align="center" class="content">
 				<tr>
-					<td width="200px" align="center">이 름</td>
+					<th width="200px" align="center">이 름</th>
 					<td align="left" width="500px"><%=article.getWriter()%></td>
 				</tr>
 				<tr>
-					<td width="200px" align="center">제 목</td>
+					<th width="200px" align="center">제 목</th>
 					<td align="left" width="500px">
 						<input type="text" size="60" maxlength="50" name="subject" value="<%=article.getSubject()%>">
 					</td>
 				</tr>
 				<tr>
-					<td width="200px" align="center">Email</td>
+					<th width="200px" align="center">Email</th>
 					<td align="left" width="500px"><%=article.getEmail()%></td>
 				</tr>
 				<tr>
-					<td width="200px" align="center">내 용</td>
+					<th width="200px" align="center">내 용</th>
 					<td align="left" width="500px"><textarea name="content" rows="20" cols="60">
  						<%=article.getContent()%></textarea>
  					</td>
 				</tr>
 				<tr>
-					<td width="200px" align="center">비밀번호</td>
+					<th width="200px" align="center">비밀번호</th>
 					<td align="left" width="500px">
 						<input type="password" size="15" maxlength="12" name="pass">
 					</td>

@@ -34,31 +34,28 @@ try {
 		<section align="center">
 			<div style="margin-top:50px;">
 				<h2>글 작성</h2><br>
-				<form method="post" name="writeForm" id="writeForm"
-					action="writeProc.jsp" onsubmit="return writeSave()"
-					class="content">
+				<form method="post" name="writeForm" class="content"
+					action="writeProc.jsp" onsubmit="return writeSave()" 
+					>
 					<input type="hidden" name="num" value="<%=num%>"> 
 					<input type="hidden" name="ref" value="<%=ref%>"> 
 					<input type="hidden" name="step" value="<%=step%>"> 
 					<input type="hidden" name="depth" value="<%=depth%>">
-					<table width="800" cellpadding="0" cellspacing="0"
+					<table width="700" cellpadding="0" cellspacing="0"
 						align="center">
 						<tr>
-							<th align="right" colspan="2""><a href="boardList.jsp">글목록</a></th>
-						</tr>
-						<tr>
 							<th width="150" align="center">이름</th>
-							<td width="330"><input type="text" size="12" maxlength="12"
+							<td align="left" width="330"><input type="text" size="12" maxlength="12"
 								name="writer" /></td>
 						</tr>
 						<tr>
 							<th width="150" align="center">이메일</th>
-							<td width="330"><input type="text" size="30" maxlength="30"
+							<td align="left" width="330"><input type="text" size="30" maxlength="30"
 								name="email" /></td>
 						</tr>
 						<tr>
 							<th width="150" align="center">제목</th>
-							<td width="330">
+							<td align="left" width="330">
 								<%
 								if (request.getParameter("num") == null) {
 								%> <input type="text" size="50" maxlength="50" name="subject" /> <%
@@ -71,20 +68,20 @@ try {
 						</tr>
 						<tr>
 							<th width="100" align="center">내용</th>
-							<td width="330"><textarea name="content" rows="13" cols="50"></textarea>
+							<td align="left" width="330"><textarea name="content" rows="13" cols="50"></textarea>
 							</td>
 						</tr>
 						<tr>
 							<th width="100" align="center">비밀번호</th>
-							<td width="330"><input type="password" size="10"
+							<td align="left" width="330"><input type="password" size="10"
 								maxlength="10" name="pass" /></td>
 						</tr>
 						<tr>
-							<td colspan="2" align="center">
-							<input type="submit" value="글쓰기" class="my_input"/> 
-							<input type="reset" value="다시작성" class="my_input"/> 
-							<input type="button" value="목록" class="my_input" 
-								onClick="window.location='boardList.jsp'"></td>
+							<td colspan=2 align="center">
+								<input type="submit" value="글쓰기" class="my_input"> 
+								<input type="reset"	value="다시작성" class="my_input"> 
+								<input type="button" value="목록보기" class="my_input" onclick="document.location.href='boarList.jsp'">
+							</td>
 						</tr>
 					</table>
 				</form>

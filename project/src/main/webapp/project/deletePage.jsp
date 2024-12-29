@@ -32,7 +32,7 @@
 			<div class="center">
 			<form name="myForm" method="post" action="deleteDB.jsp"
 				onsubmit="return checkPass()">
-				<table align="center" class="deletePage">
+				<table align="center" class="myPage">
 					<tr>
 						<th colspan="2" align="center"><b>회원 탈퇴</b></th>
 					</tr>
@@ -42,8 +42,8 @@
 					</tr>
 					<tr>
 						<td colspan="2" align="center">
-							<input type="submit" value="회원탈퇴"> 
-							<input type="button" value="취  소"
+							<input type="submit" value="회원탈퇴" style="padding:10px; font-size:20px"> 
+							<input type="button" value="취  소" style="padding:10px; font-size:20px"
 								onclick="javascript:window.location='loginPage.jsp'">
 						</td>
 					</tr>

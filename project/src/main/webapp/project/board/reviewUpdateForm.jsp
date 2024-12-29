@@ -39,39 +39,39 @@ try {
 		<form method="post" name="writeform" action="reviewUpdateProc.jsp?pageNum=<%=pageNum%>"
 			onsubmit="return writeSave()" class="content">
 			<input type="hidden" name="num" value="<%=article.getNum()%>">
-			<table width="600px" border="0" cellspacing="0" cellpadding="0"
+			<table width="700px" border="0" cellspacing="0" cellpadding="0"
 				align="center" >
 				<tr>
-					<td width="200px" align="center">이 름</td>
-					<td align="left" width="500px"><input type="text" size="30"
+					<th width="200px" align="center">이 름</th>
+					<td align="left" ><input type="text" size="30"
 						maxlength="10" name="writer" value="<%=article.getWriter()%>">
 					</td>
 				</tr>
 				<tr>
-					<td width="200px" align="center">제 목</td>
-					<td align="left" width="500px"><input type="text" size="60"
+					<th width="200px" align="center">제 목</th>
+					<td align="left" ><input type="text" size="60"
 						maxlength="50" name="subject" value="<%=article.getSubject()%>"></td>
 				</tr>
 				<tr>
-					<td width="200px" align="center">Email</td>
-					<td align="left" width="500px"><input type="text" size="60"
+					<th width="200px" align="center">Email</th>
+					<td align="left" ><input type="text" size="60"
 						maxlength="30" name="email" value="<%=article.getEmail()%>"></td>
 				</tr>
 				<tr>
-					<td width="200px" align="center">내 용</td>
-					<td align="left" width="500px"><textarea name="content"
+					<th width="200px" align="center">내 용</th>
+					<td align="left" ><textarea name="content"
 							rows="20" cols="60">
  					<%=article.getContent()%></textarea></td>
 				</tr>
 				<tr>
-					<td width="200px" align="center">평점</td>
-					<td align="left" width="500px">
+					<th width="200px" align="center">평점</th>
+					<td align="left" >
 						<input type="number" size="10" min="1" max="5" value="<%=article.getRate()%>" name="rate">
 					</td>
 				</tr>
 				<tr>
-					<td width="200px" align="center">비밀번호</td>
-					<td align="left" width="500px">
+					<th width="200px" align="center">비밀번호</th>
+					<td align="left" >
 						<input type="password" size="15" maxlength="12" name="pass">
 					</td>
 				</tr>

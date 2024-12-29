@@ -25,9 +25,9 @@ ArrayList<ProductVO> list = dao.selectAllDB(vo);
 </head>
 <body>
 	<%@ include file="./header.jsp"%>
-	<main style="height: 1300px">
+	<main>
 		<%@ include file="./aside.jsp"%>
-		<section >
+		<section>
 			<div class="center">
 				<%
 				if(list.size()==0){
@@ -42,16 +42,29 @@ ArrayList<ProductVO> list = dao.selectAllDB(vo);
 				%>
 					<a href="prodDetailPage.jsp?pNum=<%=data.getNum()%>" id="<%=data.getNum()%>"> <img
 						src="./media/prod<%=data.getNum()%>.jpg">
-						<h4><%=data.getName()%></h4>
-						<p><%=data.getPrice()%>원</p>
+						<p><%=data.getName()%></p>
+						<p class="price"><%=data.getPrice()%>원</p>
 				<%
 				} //end of for
 				%>
 				</div>
+				<div class="prod">
+				<%
+				for(ProductVO data : list){
+				%>
+					<a href="prodDetailPage.jsp?pNum=<%=data.getNum()%>" id="<%=data.getNum()%>"> <img
+						src="./media/prod<%=data.getNum()%>.jpg">
+						<p><%=data.getName()%></p>
+						<p class="price"><%=data.getPrice()%>원</p>
+				<%
+				} //end of for
+				%>
+				</div>
+				<br>
+				
 			<%
 		}
 			%>
-				<br>
 			</div>
 		</section>
 	</main>

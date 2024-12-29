@@ -9,8 +9,8 @@
 	margin: 0;
 	padding: 0;
 	color: black;
-	font-family: "Nanum Gothic", "IBM Plex Sans KR";
-	font-weight: 400;
+	font-family: "Helvetica";
+/* 	font-family: "Nanum Gothic", "IBM Plex Sans KR"; */
 	font-style: normal;
 }
 
@@ -40,6 +40,7 @@ header {
 header * {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 }
 
 header i {
@@ -48,10 +49,12 @@ header i {
 }
 
 header ul a {
-	display: inline-block;
-	padding: 16px;
+	display: block;
+	padding: 29px;
 	width: 200px;
 	text-align: center;
+	font-weight: 500;
+	font-size:20px;
 }
 
 li.dropdown {
@@ -62,7 +65,7 @@ li.dropdown {
 	display: none;
 	background-color: rgb(235, 245, 253);
 	position: absolute;
-	top: 50px;
+	top: 80px;
 	flex-direction: column;
 	z-index: 13;
 	font-size: 20px;
@@ -76,7 +79,6 @@ li.dropdown {
 .dropdown:hover .dropdown_content {
 	display: block;
 }
-
 
 
 .sign {
@@ -99,9 +101,8 @@ header li:hover, .sign:hover, .dropdown_content a:hover {
 
 /* main 영역 */
 main {
-	/* background-color: antiquewhite; */
-	width: 85%;
-	height: 850px;
+	width: 100%;
+	height: 900px;
 	MARGIN: 0 AUTO;
 	display: flex;
 	flex-direction: column;
@@ -113,7 +114,7 @@ main {
 /* aside 영역 */
 .left {
 	border: 1px solid black;
-	width: 20%;
+	width: 290px;
 	height: 100%;
 	padding: 0px 25px;
 }
@@ -139,7 +140,7 @@ main {
 /* section 영역 */
 section {
 	/* border: 1px solid black; */
-	width: 75%;
+	width: 900px;
 	height: 100%;
 	margin: 0 auto;
 }
@@ -155,33 +156,67 @@ section {
 	align-content: center;
 }
 
-div .prod {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-around;
+.new_prod h1{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 24px;
+  font-style: bold;
+  color: #545454;
+} 
+.mainBoard h2{
+  text-align: center;
+  margin-top: 50px;
+  font-size: 24px;
+  font-style: bold;
+  color: #545454;
+} 
+
+.prod{
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  width: 740px;
+  text-align: center;
 }
 
-div .prod img {
-	width: 400px;
-	height: 500px;
+.prod img{
+  width: 225px;
+  height: 225px;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 
-div .prod a {
-	margin: 20px;
+.prod a{
+  text-decoration: none;
+  color: black;
+  float: left;
+  font-size: 16px;
+}
+
+.price{
+  margin-top: 4px;
+  margin-bottom: 80px;
 }
 
 .mainBoard{
 	padding:0;
-	margin-top:15px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	font-style: italic;
 }
 
-.mainBoard h2{
-	background-color: aliceblue;
+.notice_table{
+	border-radius:10pt;
+	width: 300px;
+	height: 200px;
+	text-align: center;
+	display:flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items: center;
+}
+.notice_table a{
 }
 
 /* 제품상세 */
@@ -204,7 +239,7 @@ div .prod a {
 	font-size: 20px;
 }
 
-.detail_top select {
+.detail_top select, .detail_top #quantity {
 	border: 1px solid gainsboro;
 	width: 140px;
 	padding: 4px;
@@ -247,17 +282,26 @@ div .detail_bottom img {
 }
 
 .basket *{
-	margin:13px;
-	font-size: 23px;
 	padding: 15px;
+	text-align: center;
 }
-
+#basket_table {
+	width:700px;
+}
 #basket_table th{
 	background-color: aliceblue;
 }
 
 #basket_table td{
-	border-bottom: 1px solid grey;
+	border-bottom: 1px solid gainsboro;
+}
+
+.my_input2 {
+	width:210px;
+	font-size:18px;
+	padding:10px;
+	background-color:aliceblue;
+	border: 0px;
 }
 
 
@@ -267,6 +311,17 @@ div .detail_bottom img {
 	margin: 0 AUTO;
 	margin-top: 10px;
 	font-size: 50px;
+}
+
+.form{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	width:600px;
+	height:700px;
+	border:1px solid grey;
+	border-radius: 10pt;
 }
 
 table {
@@ -294,6 +349,17 @@ table {
 	font-weight: bold;
 }
 
+#registerForm{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	width:750px;
+	height:800px;
+	border:1px solid grey;
+	border-radius: 10pt;
+}
+
 #registerForm input, #registerForm select, #modifyForm input, #modifyForm select {
 	background-color: aliceblue;
 	height: 50px;
@@ -309,18 +375,15 @@ label {
 	margin-right: 10px;
 }
 
-#writeForm INPUT {
-	width: 90%;
-}
-
 .myPage {
 	border:2px solid rgb(208, 229, 255);
 	border-radius:10pt;
-	font-size:25px;
+	font-size:20px;
 }
-.myPage * {
-	padding:30px;
+.myPage *{
+	padding:20px;
 }
+
 
 .deletePage td{
 	border:2px solid rgb(208, 229, 255);
@@ -360,19 +423,22 @@ label {
 	height:300px;
 	border:1px solid gainsboro;
 }
+.content input, .content textarea{
+	font-size:18px;
+}
 
 .my_input {
-	width:100px;
-	height:50px;
+	padding:10px;
 	font-size:20px;
 	background-color:rgb(235, 245, 253);
 	border: 0px;
 }
 
+
 /* 푸터영역 */
 footer {
 	background-color: rgb(242, 242, 242);
-	height: 200px;
+	height: 270px;
 	font-size: 13px;
 	color: white;
 	display: flex;
@@ -382,7 +448,7 @@ footer {
 }
 
 footer li {
-	margin: 20px;
+	margin: 0px 20px;
 	position: relative;
 	left: 50px;
 }

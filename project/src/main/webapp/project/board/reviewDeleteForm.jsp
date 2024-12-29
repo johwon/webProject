@@ -32,8 +32,8 @@ String pageNum = request.getParameter("pageNum");
 					action="reviewDeleteProc.jsp?pageNum=<%=pageNum%>"
 					onsubmit="return deleteSave()">
 					<input type="hidden" name="num" value="<%=num%>">
-					<table border="1" align="center" cellspacing="0" cellpadding="0"
-						width="360">
+					<table border="0" align="center" cellspacing="0" cellpadding="0"
+						width="400" class="myPage">
 						<tr height="30">
 							<td align=center><b>비밀번호를 입력해주세요.</b></td>
 						</tr>

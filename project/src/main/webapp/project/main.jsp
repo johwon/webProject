@@ -112,18 +112,23 @@ ArrayList<ReviewBoardVO> rlist = rdao.selectDB();
 			</form>
 		</aside>
 		<section>
+		<div class="center">
 			<div class="new_prod">
-				<br>
 				<h1 align="center">NEW!</h1>
 				<div class="prod">
 					<a href="prodDetailPage.jsp?pNum=10001" id="10001"> <img
 						src="./media/prod10001.jpg">
-						<h2>T-SHIRT</h2>
-						<p>25,000원</p>
+						<p>T-SHIRT</p>
+						<p class="price">25,000원</p>
 					</a> <a href="prodDetailPage.jsp?pNum=10002" id="10002"> <img
 						src="./media/prod10002.jpg">
-						<h2>정장 셋업</h2>
-						<p>80,000원</p>
+						<p>정장 셋업</p>
+						<p class="price">80,000원</p>
+					</a>
+					</a> <a href="prodDetailPage.jsp?pNum=10003" id="10003"> <img
+						src="./media/prod10003.jpg">
+						<p>자켓</p>
+						<p class="price">65,000원</p>
 					</a>
 				</div>
 				<br>
@@ -132,8 +137,9 @@ ArrayList<ReviewBoardVO> rlist = rdao.selectDB();
 			<div class="mainBoard">
 				<div class="notice">
 					<a href="<%=request.getContextPath()%>/project/board/noticeList.jsp">
-					<h2 align="center"><공지사항></h2>
-					</a> <br>
+					<h2 align="center">공지사항</h2></a>
+					 <br>
+					<div class="notice_table">
 					<%
 					for (NoticeBoardVO data : list) {
 					%>
@@ -145,11 +151,13 @@ ArrayList<ReviewBoardVO> rlist = rdao.selectDB();
 					<%
 					}
 					%>
+					</div>
 				</div>
 				<div class="review">
 					<a
 						href="<%=request.getContextPath()%>/project/board/reviewList.jsp"><h2 align="center">BEST
 							REVIEW</h2></a> <br>
+							<div class="notice_table">
 					<%
 					for (ReviewBoardVO data : rlist) {
 						if (data.getDepth() == 0) {
@@ -163,7 +171,9 @@ ArrayList<ReviewBoardVO> rlist = rdao.selectDB();
 					}
 					}
 					%>
+					</div>
 				</div>
+			</div>
 			</div>
 		</section>
 	</main>
