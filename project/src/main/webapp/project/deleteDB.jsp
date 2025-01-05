@@ -22,11 +22,14 @@ if (flag == true) {
 
 <meta http-equiv="Refresh" content="3;url=login.jsp">
 <body>
-	<main>
-		<font size="5" face="바탕체"> 회원정보가 삭제되었습니다<br></br><br></br>
-			3초후에 로그인 페이지로 이동합니다
-		</font>
-	</main>
+	<script>
+	alert("탈퇴가 완료되었습니다."); 
+	history.go(-1);
+	</script>
+	<%
+// 로그인 페이지로 리다이렉트
+response.sendRedirect("loginPage.jsp");
+%>
 	<%
 	} else {
 	%>
