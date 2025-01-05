@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>웹페이지</title>
-<link rel="stylesheet" href="./main.css?after" type="text/css">
+<link rel="stylesheet" href="../main.css?after" type="text/css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
@@ -16,7 +16,7 @@
 <script src="script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
 </head>
 <body>
-	<%@ include file="./header.jsp"%>
+	<%@ include file="../common/header.jsp"%>
 	<main>
 		<section align="center">
 			<div class="center">
@@ -65,6 +65,6 @@
 			</div>
 		</section>
 	</main>
-	<%@ include file="./bottom.jsp"%>
+	<%@ include file="../common/footer.jsp"%>
 </body>
 </html>

@@ -5,16 +5,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>웹페이지</title>
-<link rel="stylesheet" href="main.css?after" type="text/css">
+<link rel="stylesheet" href="../main.css?after" type="text/css">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Kablammo&family=Nanum+Gothic&family=Oxanium:wght@200..800&display=swap');
 </style>
-<script src="https://kit.fontawesome.com/7ab22df35b.js"
-	crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/7ab22df35b.js" crossorigin="anonymous"></script>
 <script src="script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
 </head>
 <body onload="onLoad();">
-<%@ include file="./header.jsp"%>
+<%@ include file="../common/header.jsp"%>
 	<main>
 		<section align="center">
 			<div class="center">
@@ -78,6 +77,6 @@
 			</div>
 		</section>
 	</main>
-	<%@ include file="./bottom.jsp"%>
+	<%@ include file="../common/footer.jsp"%>
 </body>
 </html>

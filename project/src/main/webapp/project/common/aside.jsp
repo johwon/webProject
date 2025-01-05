@@ -7,9 +7,9 @@
 	<hr>
 	<br>
 	<ul class="nav1">
-		<a href="<%=request.getContextPath()%>/project/prodPage.jsp"><strong>TOP</strong></a>
+		<a href="<%=request.getContextPath()%>/project/product/prodPage.jsp"><strong>TOP</strong></a>
 		<div class="ul_body">
-			<li><a href="<%=request.getContextPath()%>/project/prodPage.jsp">아우터</a></li>
+			<li><a href="<%=request.getContextPath()%>/project/product/prodPage.jsp">아우터</a></li>
 			<li><a href="#">가디건,니트</a></li>
 			<li><a href="#">후드/맨투맨</a></li>
 			<li><a href="#">티셔츠</a></li>

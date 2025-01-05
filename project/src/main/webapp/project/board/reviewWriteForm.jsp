@@ -29,7 +29,7 @@ try {
 <script src="script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
 </head>
 <body>
-	<%@ include file="../header.jsp"%>
+	<%@ include file="../common/header.jsp"%>
 	<main>
 		<section align="center">
 			<div style="margin-top:50px;">
@@ -112,4 +112,4 @@ try {
 		</section>
 		<aside class="right"></aside>
 	</main>
-	<%@ include file="../bottom.jsp"%>
+	<%@ include file="../common/footer.jsp"%>

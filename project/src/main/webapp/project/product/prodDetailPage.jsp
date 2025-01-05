@@ -15,8 +15,7 @@ vo = dao.selectDB(vo);
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>웹페이지</title>
-<link rel="stylesheet" href="./main.css?after" type="text/css">
-<link rel="stylesheet" href="./carousel.css" />
+<link rel="stylesheet" href="../main.css?after" type="text/css">
 <style>
 @import
 	url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Kablammo&family=Nanum+Gothic&family=Oxanium:wght@200..800&display=swap')
@@ -26,14 +25,14 @@ vo = dao.selectDB(vo);
 <script src="script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
 </head>
 <body>
-	<%@ include file="./header.jsp"%>
+	<%@ include file="../common/header.jsp"%>
 	<main>
-		<%@ include file="./aside.jsp"%>
+		<%@ include file="../common/aside.jsp"%>
 		<section>
 			<div class="detail">
 				<form action="basketProc.jsp">
 					<div class="detail_top">
-						<img src="./media/prod<%=vo.getNum()%>.jpg" alt="">
+						<img src="../media/prod<%=vo.getNum()%>.jpg" alt="">
 						<div class="detail_top_content">
 							<input type="hidden" name="pNum" value="<%=pNum%>">
 							<h2><%=vo.getName()%></h2>
@@ -67,6 +66,6 @@ vo = dao.selectDB(vo);
 			</div>
 		</section>
 	</main>
-	<%@ include file="./bottom.jsp"%>
+	<%@ include file="../common/footer.jsp"%>
 </body>
 </html>

@@ -5,9 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>웹페이지</title>
-<link rel="stylesheet" href="./main.css?after" type="text/css">
-<link rel="stylesheet" href="./carousel.css" />
-<!-- 내부 자바스크립트 -->
+<link rel="stylesheet" href="../main.css?after" type="text/css">
 <script language="javascript">
 	function begin() {
 		document.myForm.pass.focus();
@@ -26,7 +24,7 @@
 
 </head>
 <body onload="begin()">
-	<%@ include file="./header.jsp"%>
+	<%@ include file="../common/header.jsp"%>
 	<main>
 		<section>
 			<div class="center">
@@ -53,6 +51,6 @@
 		</section>
 		<aside class="right"></aside>
 	</main>
-	<%@ include file="./bottom.jsp"%>
+	<%@ include file="../common/footer.jsp"%>
 </body>
 </html>

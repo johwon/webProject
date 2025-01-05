@@ -30,39 +30,9 @@ ArrayList<ReviewBoardVO> rlist = rdao.selectDB();
 <script src="script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
 </head>
 <body>
-	<header>
-		<a href="<%=request.getContextPath()%>/project/main.jsp"><i class="fa-solid fa-shirt"></i>
-			<h2>SHOP</h2></a>
-		<ul>
-			<li class="dropdown"><a href="#">BEST</a>
-				<div class="dropdown_content">
-					<a href="<%=request.getContextPath()%>/project/prodPage.jsp">TOP</a> 
-					<a href="<%=request.getContextPath()%>/project/prodPage.jsp">BOTTOM</a> 
-					<a href="<%=request.getContextPath()%>/project/prodPage.jsp">ACC</a>
-				</div></li>
-			<li><a href="<%=request.getContextPath()%>/project/board/noticeList.jsp">공지사항</a></li>
-			<li><a href="<%=request.getContextPath()%>/project/board/boardList.jsp">문의게시판</a></li>
-			<li><a href="<%=request.getContextPath()%>/project/board/reviewList.jsp">REVIEW</a></li>
-		</ul>
-		<div class="header_icon">
-			<%
-			String sessionId = (String) session.getAttribute("id");
-			if (sessionId == null) {
-			%>
-			<a href="<%=request.getContextPath()%>/project/loginPage.jsp" class="sign"><li>로그인</li></a> <a
-				href="<%=request.getContextPath()%>/project/registerPage.jsp" class="sign"><li>회원가입</li></a>
-			<%
-			} else {
-			%>
-			<a href="<%=request.getContextPath()%>/project/loginPage.jsp" class="sign"><li>마이페이지</li></a> 
-			<a href="<%=request.getContextPath()%>/project/basketPage.jsp"><i class="fa-solid fa-basket-shopping"></i></a>
-			<%
-			}
-			%>
-		</div>
-	</header>
+	<%@ include file="./common/header.jsp"%>
 	<div class="carousel">
-		<%@ include file="carousel.jsp"%>
+		<%@ include file="./carousel/carousel.jsp"%>
 	</div>
 	<main>
 		<aside class="left">
@@ -177,28 +147,6 @@ ArrayList<ReviewBoardVO> rlist = rdao.selectDB();
 			</div>
 		</section>
 	</main>
-	<footer>
-		<div class="center" align="center">
-			<ul>
-				<a href=#><li>회사소개</li></a>
-				<a href=#><li>매장안내</li></a>
-				<a href=#><li>이용안내</li></a>
-				<a href=#><li>개인정보처리방침</li></a>
-				<a href=#><li>이용약관</li></a>
-			</ul>
-			<br>
-			<div>
-				<p>상호 : (주)shop / 대표 : 조해원 / 주소 : 서울특별시 강남구 역삼동 호산빌딩</p>
-				<p>반품주소 : 서울특별시 강남구 역삼동 호산빌딩</p>
-				<p>사업자등록번호 : 000-00-00000 [사업자정보확인] / 통신판매업신고번호 : 제
-					0000-서울-0000호</p>
-			</div>
-			<br>
-			<p>고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한 구매안전서비스를 이용할 수 있습니다.</p>
-			<br>
-			<p>ⓒ (주)shop. All Rights reserved. design by cho.</p>
-
-		</div>
-	</footer>
+	<%@ include file="./common/footer.jsp"%>
 </body>
 </html>

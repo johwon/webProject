@@ -41,5 +41,5 @@ response.sendRedirect("loginPage.jsp");
 	}
 	%>
 </body>
-<%@ include file="./bottom.jsp"%>
+<%@ include file="../common/footer.jsp"%>
 </html>

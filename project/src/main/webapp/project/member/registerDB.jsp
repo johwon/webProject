@@ -19,7 +19,7 @@
 <script src="script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
 </head>
 <body>
-	<%@include file="./header.jsp"%>
+	<%@include file="../common/header.jsp"%>
 	<%
 	request.setCharacterEncoding("UTF-8");
 	String id = request.getParameter("id");
@@ -58,5 +58,5 @@
 		</section>
 		<aside class="right"></aside>
 	</main>
-	<%@ include file="./bottom.jsp"%>
+	<%@ include file="../common/footer.jsp"%>
 </body>

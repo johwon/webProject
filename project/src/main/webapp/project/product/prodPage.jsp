@@ -14,7 +14,7 @@ ArrayList<ProductVO> list = dao.selectAllDB(vo);
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>웹페이지</title>
-<link rel="stylesheet" href="./main.css?after" type="text/css">
+<link rel="stylesheet" href="../main.css?after" type="text/css">
 <style>
 @import
 	url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Kablammo&family=Nanum+Gothic&family=Oxanium:wght@200..800&display=swap')
@@ -24,9 +24,9 @@ ArrayList<ProductVO> list = dao.selectAllDB(vo);
 <script src="script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
 </head>
 <body>
-	<%@ include file="./header.jsp"%>
+	<%@ include file="../common/header.jsp"%>
 	<main>
-		<%@ include file="./aside.jsp"%>
+		<%@ include file="../common/aside.jsp"%>
 		<section>
 			<div class="center">
 				<%
@@ -41,7 +41,7 @@ ArrayList<ProductVO> list = dao.selectAllDB(vo);
 				for(ProductVO data : list){
 				%>
 					<a href="prodDetailPage.jsp?pNum=<%=data.getNum()%>" id="<%=data.getNum()%>"> <img
-						src="./media/prod<%=data.getNum()%>.jpg">
+						src="../media/prod<%=data.getNum()%>.jpg">
 						<p><%=data.getName()%></p>
 						<p class="price"><%=data.getPrice()%>원</p>
 				<%
@@ -53,7 +53,7 @@ ArrayList<ProductVO> list = dao.selectAllDB(vo);
 				for(ProductVO data : list){
 				%>
 					<a href="prodDetailPage.jsp?pNum=<%=data.getNum()%>" id="<%=data.getNum()%>"> <img
-						src="./media/prod<%=data.getNum()%>.jpg">
+						src="../media/prod<%=data.getNum()%>.jpg">
 						<p><%=data.getName()%></p>
 						<p class="price"><%=data.getPrice()%>원</p>
 				<%
@@ -68,6 +68,6 @@ ArrayList<ProductVO> list = dao.selectAllDB(vo);
 			</div>
 		</section>
 	</main>
-	<%@ include file="./bottom.jsp"%>
+	<%@ include file="../common/footer.jsp"%>
 </body>
 </html>

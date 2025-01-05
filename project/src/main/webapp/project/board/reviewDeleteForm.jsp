@@ -23,7 +23,7 @@ String pageNum = request.getParameter("pageNum");
 <script src="script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
 </head>
 <body>
-	<%@ include file="../header.jsp"%>
+	<%@ include file="../common/header.jsp"%>
 	<main>
 		<section align="center">
 			<div class="center">
@@ -54,4 +54,4 @@ String pageNum = request.getParameter("pageNum");
 		</section>
 		<aside class="right"></aside>
 	</main>
-	<%@ include file="../bottom.jsp"%>
+	<%@ include file="../common/footer.jsp"%>

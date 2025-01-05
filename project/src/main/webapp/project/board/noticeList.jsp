@@ -48,7 +48,7 @@ NoticeBoardVO vo = new NoticeBoardVO();
 <script src="script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
 </head>
 <body>
-	<%@ include file="../header.jsp"%>
+	<%@ include file="../common/header.jsp"%>
 	<main>
 		<section align="center">
 			<div class="center">
@@ -147,6 +147,6 @@ NoticeBoardVO vo = new NoticeBoardVO();
 			</div>
 		</section>
 	</main>
-	<%@ include file="../bottom.jsp"%>
+	<%@ include file="../common/footer.jsp"%>
 </body>
 </html>
