@@ -70,10 +70,10 @@ try {
 							<td width="330" align="left"><textarea name="content" rows="13" cols="50"></textarea>
 							</td>
 						</tr>
-						<!-- <tr>
+						<tr>
 						 <th>첨부파일 </th>
 						 <td align="left"><input type="file" name="fileName"></td>
-						</tr> -->
+						</tr>
 						<%
 						if (request.getParameter("num") == null) {
 						%> 

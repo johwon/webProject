@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./carousel.css" />
-    <script
-      src="https://kit.fontawesome.com/6ff644124c.js"
-      async
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/7ab22df35b.js"></script>
   </head>
   <body>
     <div id="all">
@@ -22,12 +18,12 @@
       <i class="fa-solid fa-circle-chevron-left" id="navgateleft"></i>
       <i class="fa-solid fa-circle-chevron-right" id="navgateright"></i>
       <div id="indicator">
-        <a href="#" class="active"><i class="fa-solid fa-circle-dot"></i></a>
+        <a href="#" ><i class="fa-solid fa-circle-dot" class="active"></i></a>
         <a href="#"><i class="fa-solid fa-circle-dot"></i></a>
         <a href="#"><i class="fa-solid fa-circle-dot"></i></a>
         <a href="#"><i class="fa-solid fa-circle-dot"></i></a>
       </div>
     </div>
-    <script src="./carousel.js"></script>
-  </body>
+   <script src="./carousel.js"></script>
+	</body>
 </html>

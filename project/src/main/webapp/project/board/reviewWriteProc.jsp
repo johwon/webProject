@@ -7,7 +7,6 @@ request.setCharacterEncoding("UTF-8");
 <jsp:useBean id="vo" scope="page" class="co.kh.edu.reviewBoard.model.ReviewBoardVO">
 	<jsp:setProperty name="vo" property="*" />
 </jsp:useBean>
-<!-- 2. curd -->
 <%
 vo.setRegdate(new Timestamp(System.currentTimeMillis()));
 vo.setIp(request.getRemoteAddr());
