@@ -20,7 +20,7 @@ zipList = zdao.dongCheck(zvo);
 <html>
 <head>
 <title>우편번호검색</title>
-<script src="script.js"></script>
+<script src="../script.js"></script>
 <style>
  main {
  	MARGIN: 0 AUTO;

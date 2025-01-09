@@ -28,7 +28,7 @@ cvo = cdao.selectOneDB(cvo);
 	href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Kablammo&family=Nanum+Gothic&family=Oxanium:wght@200..800&display=swap"
 	rel="stylesheet">
 <script src="https://kit.fontawesome.com/7ab22df35b.js"></script>
-<script src="script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
+<script src="../script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
 <style>
 	td input{
 	background-color: black;	

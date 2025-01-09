@@ -42,10 +42,10 @@ ArrayList<ReviewBoardVO> rlist = rdao.selectDB();
 			<hr>
 			<br>
 			<ul class="nav1">
-				<a href="<%=request.getContextPath()%>/project/prodPage.jsp"><strong>TOP</strong></a>
+				<a href="<%=request.getContextPath()%>/project/product/prodPage.jsp"><strong>TOP</strong></a>
 				<div class="ul_body">
 					<li><a
-						href="<%=request.getContextPath()%>/project/prodPage.jsp">아우터</a></li>
+						href="<%=request.getContextPath()%>/project/product/prodPage.jsp">아우터</a></li>
 					<li><a href="#">가디건,니트</a></li>
 					<li><a href="#">후드/맨투맨</a></li>
 					<li><a href="#">티셔츠</a></li>
@@ -86,16 +86,16 @@ ArrayList<ReviewBoardVO> rlist = rdao.selectDB();
 			<div class="new_prod">
 				<h1 align="center">NEW!</h1>
 				<div class="prod">
-					<a href="prodDetailPage.jsp?pNum=10001" id="10001"> <img
+					<a href="product/prodDetailPage.jsp?pNum=10001" id="10001"> <img
 						src="./media/prod10001.jpg">
 						<p>T-SHIRT</p>
 						<p class="price">25,000원</p>
-					</a> <a href="prodDetailPage.jsp?pNum=10002" id="10002"> <img
+					</a> <a href="product/prodDetailPage.jsp?pNum=10002" id="10002"> <img
 						src="./media/prod10002.jpg">
 						<p>정장 셋업</p>
 						<p class="price">80,000원</p>
 					</a>
-					</a> <a href="prodDetailPage.jsp?pNum=10003" id="10003"> <img
+					</a> <a href="product/prodDetailPage.jsp?pNum=10003" id="10003"> <img
 						src="./media/prod10003.jpg">
 						<p>자켓</p>
 						<p class="price">65,000원</p>

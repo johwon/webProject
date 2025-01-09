@@ -10,9 +10,9 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Kablammo&family=Nanum+Gothic&family=Oxanium:wght@200..800&display=swap');
 </style>
 <script src="https://kit.fontawesome.com/7ab22df35b.js" crossorigin="anonymous"></script>
-<script src="script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
+<script src="../script.js?timestamp=<%=System.currentTimeMillis()%>"></script>
 </head>
-<body onload="onLoad();">
+<body>
 <%@ include file="../common/header.jsp"%>
 	<main>
 		<section align="center">

@@ -248,22 +248,7 @@ function onLoad(){
 	   // 폼객체 가져오기
 	   const registerFom = document.querySelector(".registerform");
 
-	   /*// 이벤트리스너
-	   inputID.addEventListener("blur",()=>validate(inputID, idPattern, "영 대소문자, 4글자 이상 입력"));
-	   inputPWD.addEventListener("blur",()=>validate(inputPWD, pwdPattern, "영 대소문자,숫자, 8자 이상 입력"));
-	   inputPWD2.addEventListener("blur",()=>{
-	       validate(inputPWD2, pwdPattern, "영 대소문자,숫자, 6~10자 입력");
-	       if(inputPWD.value !== inputPWD2.value){
-	           inputPWD2.nextSibling.textContent = "비밀번호가 일치하지 않습니다."
-	           inputPWD2.nextSibling.style.color = "red";
-	           inputPWD2.value="";
-	           inputPWD2.focus();
-	           return;
-	       }
-	   });
-	   inputName.addEventListener("blur",()=>validate(inputName, namePattern, "한글로 입력"));*/
-	   
-	   //이벤트핸들러
+	  /* //이벤트핸들러
 	   function validate(userInput, pattern, message){
 	       if(userInput.value.match(pattern)){
 	           userInput.nextSibling.textContent = "성공";
@@ -276,7 +261,7 @@ function onLoad(){
 	           userInput.focus();
 	           return;
 	       }
-	   }
+	   }*/
 
 	   //폼이벤트
 	   registerFom.addEventListener("submit", (e)=>{
