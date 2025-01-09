@@ -78,7 +78,6 @@ div#indicator {
 #indicator a {
   font-size: 20px;
   margin-right: 5px;
-  color: orange;
 }
 
 #indicator a:hover {
@@ -86,6 +85,6 @@ div#indicator {
   cursor: pointer;
 }
 
-.active {
-  color: orange;  /* 활성화된 인디케이터는 주황색으로 표시 */
+.active i{
+  color: aliceblue;  /* 활성화된 인디케이터는 주황색으로 표시 */
 }
