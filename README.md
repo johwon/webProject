@@ -25,3 +25,5 @@
 
 ## 🔍ERD-다이어그램
 ![shoppingmall-ERD](https://github.com/user-attachments/assets/f97954f0-5d8e-4f7e-96d3-5ddb02afc94b)
+
+## 📺실행 영상 [Click hear](https://www.youtube.com/watch?v=_G_5DaP0J08)
