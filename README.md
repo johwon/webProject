@@ -1,4 +1,4 @@
-# Java-Project-WebPage
+# Java-Shoppingmall-Project
 # 쇼핑몰 웹페이지 제작 프로젝트
 
 
